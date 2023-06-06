@@ -10,6 +10,7 @@ class MarriageRegistrationController
         $data = $marriageRegistrationModel->getApplicantData();
 
         renderView('App/complaintForm.php', compact('data'));
+
     }
 }
 
