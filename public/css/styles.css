@@ -1,0 +1,62 @@
+/* CSS styles for your application */
+
+body {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+        url("../Images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.sidebar {
+    height: 100vh;
+    background-color: transparent;
+    border-right: 1px solid black;
+}
+
+.sidebar-items {
+    background-color: white;
+    margin: auto;
+    /* Center the div horizontally */
+}
+
+.sidebar-item {
+    border: 1px solid black;
+    border-bottom: none;
+    text-align: center;
+    /* Center align the text */
+    /* Add padding to the sidebar items */
+}
+
+.sidebar-item:last-child {
+    border-bottom: 1px solid black;
+    /* Restore the bottom border */
+}
+
+.content {
+    padding: 20px;
+    background-color: transparent;
+}
+
+.content-title {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+}
+
+.navbar {
+    background-color: #f8f9fa;
+}
+
+.sidebar-item a {
+    color: black;
+}
+
+.sidebar-item:hover {
+    background-color: lightblue;
+}
+
+/* Active sidebar item */
+.sidebar-item.active {
+    background-color: lightblue;
+}
