@@ -11,11 +11,11 @@
 </head>
 
 <body>
-    <?php include "Component/header.php"; ?>
+    <?php include "App/Component/header.php"; ?>
 
     <div class="container-fluid">
         <div class="row">
-            <?php include "Component/sidebar.php"; ?>
+            <?php include "App/Component/sidebar.php"; ?>
 
             <div class="col-md-9 content">
                 <div class="content-title bg-primary text-white p-3">
@@ -93,9 +93,9 @@
                                 </div>
 
                                 <div class="d-flex justify-content-center">
-                                    <button type="button" class="btn btn-primary">SIMPAN</button>
+                                    <button type="button" class="btn btn-success">LULUS</button>
                                     &nbsp;&nbsp;&nbsp;
-                                    <button type="button" class="btn btn-primary">HANTAR</button>
+                                    <button type="button" class="btn btn-danger">TOLAK</button>
                                 </div>
                             </form>
                             <br><br>
@@ -104,10 +104,9 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
