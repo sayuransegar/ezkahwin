@@ -20,7 +20,7 @@
             <li class="nav-item sidebar-item p-2">
                 <a class="nav-link" href="#">Permohonan Perkahwinan</a>
             </li>
-            <li class="nav-item sidebar-item p-2 active">
+            <li class="nav-item sidebar-item p-2">
                 <a class="nav-link" href="#">Pendaftaran Perkahwinan</a>
             </li>
             <li class="nav-item sidebar-item p-2">
