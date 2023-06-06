@@ -9,7 +9,7 @@ class MarriageRegistrationController
         $marriageRegistrationModel = new MarriageRegistrationModel();
         $data = $marriageRegistrationModel->getApplicantData();
 
-        renderView('App/marriageRegistrationView.php', compact('data'));
+        renderView('App/approvalApplication.php', compact('data'));
     }
 }
 
