@@ -9,7 +9,7 @@ class MarriageRegistrationController
         $marriageRegistrationModel = new MarriageRegistrationModel();
         $data = $marriageRegistrationModel->getApplicantData();
 
-        renderView('App/ManageConsultation/sessionInterface.php', compact('data'));
+        renderView('App/marriageRegistrationView.php', compact('data'));
 
     }
 }

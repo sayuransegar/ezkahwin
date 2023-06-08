@@ -2,8 +2,8 @@
 require_once 'BusinessServices/controllers/marriageRegistrationController.php';
 
 
-$marriageRegistrationController = new MarriageRegistrationController();
-$marriageRegistrationController->index();
+$facade = new MarriageRegistrationController();
+$facade->index();
 
 
 ?>
