@@ -32,7 +32,7 @@ class loginuserController extends loginuserModel
                 header("refresh:3; ../../ezkahwin/index.php");
             }
         } else {
-            include 'App/Login/loginuser.php';
+            include 'App/ManageUser/loginuser.php';
         }
     }
     

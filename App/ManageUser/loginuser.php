@@ -25,7 +25,7 @@
         <input type="password" id="pass" name="pass" placeholder="Kata Laluan" class="input-field" required />
         <input type="submit" name="Loginuser" value="Daftar Masuk" class="button-user" />
       </form>
-      <a href="../../../ezkahwin/App/Login/loginstaff.php">
+      <a href="../../../ezkahwin/App/ManageUser/loginstaff.php">
         <button class="button-user2">Log Masuk Kakitangan</button>
       </a>
       <p>

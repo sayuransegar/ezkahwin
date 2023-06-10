@@ -11,11 +11,11 @@
 </head>
 
 <body>
-    <?php include "Component/header.php"; ?>
+    <?php include "../Component/header.php"; ?>
 
     <div class="container-fluid">
         <div class="row">
-            <?php include "Component/sidebar.php"; ?>
+            <?php include "../Component/sidebar.php"; ?>
             
             <div class="col-md-9 content">
                 <div class="content-title bg-primary text-white p-3">
