@@ -7,7 +7,7 @@ class loginuserModel extends Connection
     {
         $connection = $this->getConnection();
 
-        $query = "SELECT * FROM user WHERE icnum = '$icnum' AND pass = '$password'";
+        $query = "SELECT * FROM user WHERE icnum = '$icnum' AND password = '$password'";
 
         $result = mysqli_query($connection, $query);
 

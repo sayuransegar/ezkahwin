@@ -6,7 +6,7 @@ class loginstaffModel extends Connection {
 {
     $connection = $this->getConnection();
 
-    $query = "SELECT * FROM staff WHERE icnum = '$icnum' AND pass = '$password'";
+    $query = "SELECT * FROM staff WHERE icnum = '$icnum' AND password = '$password'";
 
     $result = mysqli_query($connection, $query);
 
