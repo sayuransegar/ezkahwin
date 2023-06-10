@@ -25,7 +25,7 @@ class loginuserController extends loginuserModel
     
                 setcookie("user_data", json_encode($userArray));
     
-                header("Location: ../../ezkahwin/App/marriageRegistrationView.php");
+                header("Location: ../../ezkahwin/App/MarriageRegistration/marriageRegistrationView.php");
                 exit();
             } else {
                 echo "Invalid login credentials"; // Debugging statement
