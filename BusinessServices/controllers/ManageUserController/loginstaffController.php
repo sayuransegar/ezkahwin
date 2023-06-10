@@ -25,7 +25,7 @@ class loginstaffController extends loginstaffModel
     
                 setcookie("user_data", json_encode($userArray));
     
-                header("Location: ../../ezkahwin/App/newRegistration.php");
+                header("Location: ../../ezkahwin/App/MarriageRegistration/newRegistration.php");
                 exit();
             } else {
                 echo "Invalid login credentials"; // Debugging statement
