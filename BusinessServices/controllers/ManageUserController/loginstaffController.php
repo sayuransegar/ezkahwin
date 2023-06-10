@@ -32,7 +32,7 @@ class loginstaffController extends loginstaffModel
                 header("refresh:3; ../../ezkahwin/index.php");
             }
         } else {
-            include 'App/Login/loginstaff.php';
+            include 'App/ManageUser/loginstaff.php';
         }
     }
     

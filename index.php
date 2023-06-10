@@ -12,7 +12,7 @@ if (isset($_POST['Loginstaff'])) {
         $loginstaffController->loginStaff();
     } else {
         // Display the staff login view
-        include 'App/Login/loginstaff.php';
+        include 'App/ManageUser/loginstaff.php';
         exit(); // Exit to prevent further execution
     }
 } else {
@@ -22,7 +22,7 @@ if (isset($_POST['Loginstaff'])) {
         $facade->login();
     } else {
         // Display the user login view
-        include 'App/Login/loginuser.php';
+        include 'App/ManageUser/loginuser.php';
     }
 }
 
