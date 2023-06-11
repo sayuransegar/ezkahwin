@@ -29,7 +29,7 @@
         <button class="button-user2">Log Masuk Kakitangan</button>
       </a>
       <p>
-        <a href="register.html">Daftar</a> |
+        <a href="register.php">Daftar</a> |
         <a href="forgotpassword.html">Tukar Kata Laluan</a>
       </p>
     </section>

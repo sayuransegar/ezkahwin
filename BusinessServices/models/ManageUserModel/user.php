@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../../models/db.php';
 
-class loginuserModel extends Connection
+class user extends Connection
 {
     public function getUser($icnum, $password)
     {
