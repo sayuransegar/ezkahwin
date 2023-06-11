@@ -24,7 +24,7 @@
                 <div class="contentBox mt-3">
                     <div class="desc">
                         <div style="margin-top: 30px; margin-left: 10px;">
-                            <form class="row g-3">
+                            <form class="row g-3" action="index.php" METHOD="POST">
                                 <h6 align="left"><b>MAKLUMAT PEMOHON</b></h6><br><br>
                                 <div class="mb-3 row" style="margin-top: 10px;">
                                     <label for="inputIC" class="col-sm-2 col-form-label">No Kad Pengenalan</label>

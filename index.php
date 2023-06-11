@@ -26,4 +26,12 @@ if (isset($_POST['Loginstaff'])) {
     }
 }
 
+if (isset ($_POST[ 'addComplaint'])) {
+    $complaint_date = $_POST['complaint_date'];
+    $complaint_desc = $_POST['complaint_desc'];
+    
+    $complaint = new complaintController();
+    $complaint-›getComplaint($complaint_date, $complaint_desc);
+}
+
 ?>

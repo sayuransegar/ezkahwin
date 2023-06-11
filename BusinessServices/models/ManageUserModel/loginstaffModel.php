@@ -19,3 +19,6 @@ class loginstaffModel extends Connection
     }
     
 }
+}
+?>
+
