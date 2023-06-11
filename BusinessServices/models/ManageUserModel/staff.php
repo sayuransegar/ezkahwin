@@ -1,13 +1,15 @@
 <?php
 require_once __DIR__ . '/../../models/db.php';
 
-class loginuserModel extends Connection
+
+class staff extends Connection {
+
 {
-    public function getUser($icnum, $password)
+    public function getStaff($icnum, $password)
     {
         $connection = $this->getConnection();
 
-        $query = "SELECT * FROM user WHERE icnum = '$icnum' AND password = '$password'";
+        $query = "SELECT * FROM staff WHERE icnum = '$icnum' AND password = '$password'";
 
         $result = mysqli_query($connection, $query);
 
@@ -17,4 +19,8 @@ class loginuserModel extends Connection
             return mysqli_fetch_assoc($result); // Return the user data as an associative array
         }
     }
+    
 }
+}
+?>
+
