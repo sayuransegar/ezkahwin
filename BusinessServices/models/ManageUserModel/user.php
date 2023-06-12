@@ -17,4 +17,17 @@ class user extends Connection
             return mysqli_fetch_assoc($result); // Return the user data as an associative array
         }
     }
+
+    public function addUser($noIC, $email, $name, $gender, $phonenum, $address, $password)
+    {
+        $connection = $this->getConnection();
+        $query = "INSERT INTO user VALUES (0, '$noIC', '$email', '$name', '$gender', '$phonenum', '$address', '$password')";
+
+        $result = mysqli_query($connection, $query);
+        if (!$result) {
+            return false;
+        } else {
+            return $result;
+        }
+    }
 }

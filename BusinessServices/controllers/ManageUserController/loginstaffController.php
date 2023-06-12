@@ -1,16 +1,16 @@
 <?php
 
-require_once __DIR__ . '/../../models/ManageUserModel/loginstaffModel.php';
+require_once __DIR__ . '/../../models/ManageUserModel/staff.php';
 
 
-class loginstaffController extends loginstaffModel
+class loginstaffController extends staff
 {
     public function loginStaff() {
         if(isset($_POST['Loginstaff'])){
             $icnum = $_REQUEST['icnum'];
             $password = $_REQUEST['pass'];
     
-            $loginstaffModel = new loginstaffModel();
+            $loginstaffModel = new staff();
     
             $loginResult = $loginstaffModel->getStaff($icnum, $password);
     
