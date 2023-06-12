@@ -1,7 +1,11 @@
 <?php
-//require_once 'BusinessServices/controllers/marriageRegistrationController.php';
+
 require_once 'BusinessServices/controllers/ManageUserController/loginuserController.php';
 require_once 'BusinessServices/controllers/ManageUserController/loginstaffController.php';
+require_once 'BusinessServices/controllers/ManageUserController/registerController.php';
+require_once 'BusinessServices/controllers/ManageConsultationController/complaintController.php';
+require_once 'BusinessServices/controllers/MarriageRegistrationController/marriageRegistrationController.php';
+
 
 //$facade = new MarriageRegistrationController();
 
@@ -19,19 +23,39 @@ if (isset($_POST['Loginstaff'])) {
     // User login request
     if (isset($_POST['Loginuser'])) {
         $facade = new loginuserController();
-        $facade->login();
-    } else {
+        if ($facade->login()){
+            $getApplicant = new MarriageRegistrationController();
+            $getApplicant->displayApplicant();
+        }
+    } 
+    else {
         // Display the user login view
         include 'App/ManageUser/loginuser.php';
+        exit();
     }
 }
+                    
 
-if (isset ($_POST[ 'addComplaint'])) {
-    $complaint_date = $_POST['complaint_date'];
-    $complaint_desc = $_POST['complaint_desc'];
-    
-    $complaint = new complaintController();
-    $complaint-›getComplaint($complaint_date, $complaint_desc);
+if (isset($_POST['daftar'])) {
+    $noIC = $_POST['icnum'];
+    $email = $_POST['email'];
+    $name = $_POST['name'];
+    $gender = $_POST['gender'];
+    $phonenum = $_POST['phonenum'];
+    $address = $_POST['address'];
+    $password = $_POST['password'];
+
+    $usercourse = new registerController();
+    $usercourse->register($noIC, $email, $name, $gender, $phonenum, $address, $password);
 }
 
-?>
+if (isset($_POST['submitcomplaint'])) {
+    $complaint_date = $_POST['complaint_date'];
+    $complaint_desc = $_POST['complaint_desc'];
+
+    $usercomplaint = new complaintController();
+    $usercomplaint->complaint($complaint_date, $complaint_desc);
+}
+
+
+
