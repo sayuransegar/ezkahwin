@@ -11,8 +11,9 @@
     />
     <script src="script.js"></script>
   </head>
-  <body class="page-bg">
-    <div>
+  <body>
+    <div class="page-parent">
+      <img src="https://i.imgur.com/XRrwtZk.png" class="page-bg" width="100%" />
       <header>
         <img
           src="https://i.imgur.com/D3gqdM6.jpg"
@@ -26,7 +27,7 @@
       <section class="register-body">
         <form
           name="register-form"
-          action="registerController.php"
+          action="registercontroller.php"
           method="POST"
           onsubmit="return validateRegisterForm()"
           class="register-form"
@@ -87,7 +88,7 @@
           <input type="submit" value="Daftar Pengguna" class="button-user" />
         </form>
         <div class="mt-5">
-          <a href="loginuser.php">[ Kembali ke Laman Utama ]</a>
+          <a href="loginuser.html">[ Kembali ke Laman Utama ]</a>
         </div>
       </section>
     </div>

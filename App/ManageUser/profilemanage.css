@@ -1,0 +1,326 @@
+/* Reset all default CSS values to zero */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-bg {
+  bottom: 0rem;
+  position: absolute;
+  z-index: -1;
+}
+
+.page-parent {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.sub-header-user {
+  background-color: #007fff;
+  text-align: center;
+}
+
+.sub-header-user h3 {
+  color: white;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+}
+
+.login-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.login-body h3 {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+input:focus {
+  transition: 0.3s;
+  outline: none;
+  box-shadow: 1px 1px 3px #318ce7;
+}
+
+.input-field {
+  padding: 0 0.5rem;
+  height: 2.5rem;
+  width: 30rem;
+  background: transparent;
+  border: 2px solid #000000;
+}
+
+.button-user {
+  background-color: #007fff;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  width: 30rem;
+  height: 2.5rem;
+  border: none;
+  text-transform: uppercase;
+}
+
+.button-user2 {
+  background-color: #007fff;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  width: 15rem;
+  height: 2.5rem;
+  border: none;
+  text-transform: uppercase;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.header-img {
+  width: 100%;
+  height: 7.5rem;
+  object-fit: cover;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.mt-5 {
+  margin-top: 5rem;
+}
+
+.sub-header-staff {
+  background-color: #32cd32;
+  text-align: center;
+}
+
+.sub-header-staff h3 {
+  color: white;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+}
+
+.button-staff {
+  background-color: #32cd32;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  width: 30rem;
+  height: 2.5rem;
+  border: none;
+  text-transform: uppercase;
+}
+
+.register-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.edit-profile-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.edit-profile-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  color: rgb(0, 0, 0);
+  width: 80%;
+  padding: 3rem 2rem;
+}
+
+.side-nav-body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  width: 20%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.main-page {
+  display: flex;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.side-nav {
+  border: 1px solid black;
+  border-radius: 2px;
+  width: 17rem;
+}
+
+.side-nav-link {
+  text-align: center;
+  border-bottom: 1px solid black;
+  padding: 0.5rem 0;
+}
+
+.side-nav-link-bot {
+  text-align: center;
+}
+
+.inpage {
+  margin: auto;
+  padding: 20px;
+  width: 85%;
+
+  background-color: rgba(39, 193, 193, 0.6);
+  height: 750px;
+}
+
+.btnadd {
+  background-color: #164646;
+  border: none;
+  color: rgb(234, 221, 221);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 22px;
+  font-family: Georgia;
+  letter-spacing: 1px;
+  color: rgb(0, 0, 0);
+  margin-left: auto;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.footer {
+  display: flex;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  width: 15%;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f6f7;
+  border-top: 1px solid #27c1c1;
+}
+
+#right {
+  text-align: right;
+}
+
+#myInput {
+  background-image: url("images/searchicon.jpg");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 94.5%;
+  font-size: 14px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid rgb(0, 0, 0);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.border-line {
+  border-left: 2px solid black;
+  height: 39.07rem;
+  position: absolute;
+  left: 25%;
+  top: 16%;
+}
+
+.title-card {
+  position: relative;
+  background-color: #001845;
+  color: white;
+  width: 93.8%;
+  margin-left: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  left: 1.37rem;
+  top: 0rem;
+}
+
+.edit-profile-body h3 {
+  font-size: 1.2rem;
+}
+
+.input-field2 {
+  padding: 0 0.5rem;
+  height: 2.5rem;
+  width: 30rem;
+  background: white;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+.button-user-profile {
+  display: flex;
+  justify-content: center;
+  background-color: #007fff;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  text-align: center;
+  width: 45rem;
+  height: 2.5rem;
+  border: none;
+  text-transform: uppercase;
+}
+
+.edit-profile-form-user p {
+  display: inline;
+  margin-right: 10rem;
+}
+
+.edit-profile-form-user {
+  margin-top: 3rem;
+  margin-left: 5rem;
+  background-color: rgba(0, 29, 61, 0.8);
+  color: rgb(255, 255, 255);
+  width: 85%;
+  height: 30rem;
+  padding-left: 8rem;
+  padding-top: 5rem;
+  border-radius: 1rem;
+}
