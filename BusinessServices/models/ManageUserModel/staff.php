@@ -3,8 +3,7 @@ require_once __DIR__ . '/../../models/db.php';
 
 
 class staff extends Connection {
-
-{
+    
     public function getStaff($icnum, $password)
     {
         $connection = $this->getConnection();
@@ -21,6 +20,6 @@ class staff extends Connection {
     }
     
 }
-}
+
 ?>
 

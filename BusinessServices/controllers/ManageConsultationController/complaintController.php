@@ -3,16 +3,17 @@ require_once __DIR__ . '/../../models/ManageConsultationModel/complaint.php';
 //require_once __DIR__ . '/../../models/ManageConsultationModel/consultation.php';
 //require_once __DIR__ . '/../../models/ManageConsultationModel/status.php';
 
-class complaintController extends complaintModel {
-    public function getComplaint ($complaint_date, $complaint_desc) {
-        $complaintModel = new complaintModel();
-        $complaintResult = new $complaintModel->addComplaint($complaint_date, $complaint_desc);
+class complaintController extends complaint {
+    public function complaint($complaint_date, $complaint_desc)
+    {
+        $addcomplaintModel = new complaint();
+        $Result = $addcomplaintModel->addComplaint($complaint_date, $complaint_desc);
 
-        if (!$complaintResult) {
-            echo "No result"; //Debugging statement
-        }
-        else {
-            header("Location: listOfApplication.php");
+        if (!$Result) {
+            echo "Failed"; // Debugging statement
+            header("refresh:3; ../../ezkahwin/App/ManageConsultation/complaintForm.php");
+        } else {
+            header("Location: ../../ezkahwin/App/ManageConsultation/complaintForm.php");
             exit();
         }
     }

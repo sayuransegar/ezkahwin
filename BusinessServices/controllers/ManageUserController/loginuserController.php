@@ -1,16 +1,16 @@
 <?php
 
-require_once __DIR__ . '/../../models/ManageUserModel/loginuserModel.php';
+require_once __DIR__ . '/../../models/ManageUserModel/user.php';
 
 
-class loginuserController extends loginuserModel
+class loginuserController extends user
 {
     public function login() {
         if(isset($_POST['Loginuser'])){
             $icnum = $_REQUEST['icnum'];
             $password = $_REQUEST['pass'];
     
-            $loginuserModel = new loginuserModel();
+            $loginuserModel = new user();
     
             $loginResult = $loginuserModel->getUser($icnum, $password);
     
