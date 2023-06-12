@@ -25,6 +25,7 @@
       </header>
       <section class="login-body">
         <h3>Log Masuk</h3>
+        <!--when user click on this/fill in the table/ click the log masuk kaki tangan, it will change from loginstaff class to profilepengguna class-->
         <form action="../../../ezkahwin/index.php?user_type=staff" method="POST" class="login-form">
           <input
             type="text"

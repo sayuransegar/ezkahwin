@@ -25,6 +25,7 @@
       </header>
       <section class="login-body">
         <h3>Log Masuk</h3>
+        <!--when user click on this/fill in the table/ click the log masuk, it will change from loginuser class to home class-->
         <form action="../../../ezkahwin/index.php" method="POST" class="login-form">
           <input
             type="text"
@@ -44,8 +45,8 @@
           />
           <input type="submit" value="Log Masuk" class="button-user" />
         </form>
-        <a href="../../../ezkahwin/App/ManageUser/loginstaff.php">
-          <button class="button-user2">Log Masuk Kakitangan</button>
+        <a href="../../../ezkahwin/App/ManageUser/home.php">
+          <button class="button-user2">Log Masuk</button>
         </a>
         <p>|
           <a href="../../../ezkahwin/App/ManageUser/register.php">Daftar</a>
