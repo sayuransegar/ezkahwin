@@ -15,6 +15,7 @@ class registerController extends user
             echo "Faild Register"; // Debugging statement
             header("refresh:3; ../../ezkahwin/App/ManageUser/register.php");
         } else {
+            echo "Faild Register";
             header("Location: ../../ezkahwin/index.php");
             exit();
         }
