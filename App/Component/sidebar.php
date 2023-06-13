@@ -1,12 +1,20 @@
+<?php
+if (isset($_COOKIE['user_data'])) {
+    $userArray = json_decode($_COOKIE['user_data'], true);
+    $icnum = $userArray['icnum'];
+    $name = $userArray['fullname'];
+}
+?>
+
 <div class="col-md-3 sidebar align-items-center">
     <div class="userinfo mt-3 d-flex flex-column align-items-center">
         <div class="box d-flex align-items-center">
             <div class="label me-1">ID</div>
-            <div>: <?php echo $data['applicant_ic']; ?></div>
+            <div>: <?php echo $icnum; ?></div>
         </div>
         <div class="box d-flex align-items-center">
             <div class="label me-1">Nama</div>
-            <div>: <?php echo $data['applicant_username']; ?></div>
+            <div>: <?php echo $name; ?></div>
         </div>
     </div>
     <div class="sidebar-items w-auto mt-3">
@@ -33,7 +41,7 @@
                 <a class="nav-link" href="#">Insentif</a>
             </li>
             <li class="nav-item sidebar-item sidebar-item-last p-2">
-                <a class="nav-link" href="#">Log Keluar</a>
+                <a class="nav-link" href="../../../ezkahwin/index.php">Log Keluar</a>
             </li>
         </ul>
     </div>
