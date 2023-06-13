@@ -25,7 +25,7 @@ class loginuserController extends user
     
                 setcookie("user_data", json_encode($userArray));
     
-                header("Location: ../../ezkahwin/App/ManageConsultation/complaintForm.php");
+                header("Location: ../../ezkahwin/App/ManageConsultation/IDVerification.php");
                 exit();
             } else {
                 echo "Invalid login credentials"; // Debugging statement

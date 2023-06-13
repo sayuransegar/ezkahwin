@@ -25,7 +25,7 @@ class loginstaffController extends staff
     
                 setcookie("user_data", json_encode($userArray));
     
-                header("Location: ../../ezkahwin/App/MarriageRegistration/newRegistration.php");
+                header("Location: ../../ezkahwin/App/ManageConsultation/listOfApplication.php");
                 exit();
             } else {
                 echo "Invalid login credentials"; // Debugging statement
