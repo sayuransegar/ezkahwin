@@ -29,7 +29,7 @@
                                 <div class="d-flex justify-content-center">
                                     <input type="text" style="width: 300px; height: 35px;" class="form-control form-control-sm" id="inputIC">
                                     &nbsp;&nbsp;&nbsp;
-                                    <button type="submit" onclick="window.location.href = 'listOfApplication.php';" class="btn btn-primary mb-3">CARIAN</button>
+                                    <button type="button" onclick="window.location.href = 'applicationDetails.php';" class="btn btn-primary mb-3">CARIAN</button>
                                 </div>
                                 <div class="d-flex justify-content-center">
                                     <div style="margin-top: 40px; width: 750px;">
@@ -37,6 +37,7 @@
                                     </div>
                                 </div>
                             </form>
+                            <br><br>
                         </div>
                     </div>
                 </div>

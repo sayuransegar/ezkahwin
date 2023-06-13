@@ -4,8 +4,8 @@ class Connection {
     protected $username;
     protected $password;
     protected $database;
-
     protected $connection;
+    protected $conn;
 
     public function __construct() {
         $this->servername = "localhost";

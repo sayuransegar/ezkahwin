@@ -4,7 +4,7 @@ require_once 'BusinessServices/controllers/ManageUserController/loginuserControl
 require_once 'BusinessServices/controllers/ManageUserController/loginstaffController.php';
 require_once 'BusinessServices/controllers/ManageUserController/registerController.php';
 require_once 'BusinessServices/controllers/ManageConsultationController/complaintController.php';
-require_once 'BusinessServices/controllers/MarriageRegistrationController/marriageRegistrationController.php';
+//require_once 'BusinessServices/controllers/MarriageRegistrationController/marriageRegistrationController.php';
 
 
 //$facade = new MarriageRegistrationController();
@@ -23,18 +23,14 @@ if (isset($_POST['Loginstaff'])) {
     // User login request
     if (isset($_POST['Loginuser'])) {
         $facade = new loginuserController();
-        if ($facade->login()){
-            $getApplicant = new MarriageRegistrationController();
-            $getApplicant->displayApplicant();
-        }
-    } 
-    else {
+        $facade->login();
+    } else {
         // Display the user login view
         include 'App/ManageUser/loginuser.php';
         exit();
     }
 }
-                    
+
 
 if (isset($_POST['daftar'])) {
     $noIC = $_POST['icnum'];
@@ -57,5 +53,25 @@ if (isset($_POST['submitcomplaint'])) {
     $usercomplaint->complaint($complaint_date, $complaint_desc);
 }
 
+// Check if the complaint ID is provided in the URL and handle the deletion
+if (isset($_GET['id'])) {
+    $complaint_ID = $_GET['id'];
 
+    // Include the necessary files and instantiate the controller
+    require_once 'path/to/complaintController.php';
+    $complaintController = new complaintController();
+
+    // Call the deleteComplaint method
+    $complaintController->deleteComplaint($complaint_ID);
+
+    // Redirect to the same page to refresh the table without the deleted complaint
+    header('Location: index.php');
+    exit();
+}
+
+if (isset($complaint['complaint_desc'])) {
+    $complaint_desc = $complaint['complaint_desc'];
+} else {
+    $complaint_desc = "N/A"; // or any default value you want to assign
+}
 
