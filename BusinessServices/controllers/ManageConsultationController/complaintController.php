@@ -12,7 +12,7 @@ class complaintController extends complaint
             echo "Failed"; // Debugging statement
             header("refresh:3; ../../ezkahwin/App/ManageConsultation/complaintForm.php");
         } else {
-            header("Location: ../../ezkahwin/App/ManageConsultation/complaintForm.php");
+            header("Location: ../../ezkahwin/App/ManageConsultation/applicationDetails.php");
             exit();
         }
     }

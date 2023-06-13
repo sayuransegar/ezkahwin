@@ -7,15 +7,15 @@
     <title>EZKahwin</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="public/css/styles.css">
+    <link rel="stylesheet" href="../../../ezkahwin/public/css/styles.css">
 </head>
 
 <body>
-    <?php include "App/Component/header.php"; ?>
+    <?php include "../Component/header.php"; ?>
 
     <div class="container-fluid">
         <div class="row">
-            <?php include "App/Component/sidebar.php"; ?>
+            <?php include "../Component/sidebar.php"; ?>
 
             <div class="col-md-9 content">
                 <div class="content-title bg-primary text-white p-3">
@@ -50,7 +50,7 @@
                                     </div>
                                 </form>
                                 <div class="d-flex justify-content-center">
-                                    <button type="button" class="btn btn-danger" onclick="window.location.href='listOfApplication'">HANTAR</button>
+                                    <button type="button" class="btn btn-danger" onclick="window.location.href='listOfApplication.php'">HANTAR</button>
                                 </div>
                             </div>
                         </div>

@@ -27,7 +27,6 @@ if (isset($_POST['Loginstaff'])) {
     } else {
         // Display the user login view
         include 'App/ManageUser/loginuser.php';
-        exit();
     }
 }
 
