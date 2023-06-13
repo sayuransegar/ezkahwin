@@ -41,7 +41,7 @@ if (isset($_COOKIE['user_data'])) {
                 <a class="nav-link" href="#">Insentif</a>
             </li>
             <li class="nav-item sidebar-item sidebar-item-last p-2">
-                <a class="nav-link" href="#">Log Keluar</a>
+                <a class="nav-link" href="../../../ezkahwin/index.php">Log Keluar</a>
             </li>
         </ul>
     </div>

@@ -70,7 +70,7 @@
                                     echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'></td>";
                                     echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>";
                                     echo "<a href='complaintForm.php?id=$complaint_ID' style='text-decoration: none;'><i class='fas fa-eye'></i></a>&nbsp;";
-                                    echo "<a href='print.php?id=$complaint_ID' style='text-decoration: none;'><i class='fas fa-print'></i></a>&nbsp;";
+                                    echo "<a href='javascript:void(0);' onclick='printComplaint($complaint_ID)' style='text-decoration: none;'><i class='fas fa-print'></i></a>&nbsp;";
                                     echo "<a href='applicationDetails.php?id=$complaint_ID' style='text-decoration: none;' onclick='return confirm(\"Are you sure you want to delete this complaint?\");'><i class='fas fa-trash'></i></a>&nbsp;";
                                     echo "<a href='complaintForm.php?id=$complaint_ID' style='text-decoration: none;'><i class='fas fa-edit'></i></a>";
                                     echo "</td>";
@@ -88,8 +88,14 @@
                 </div>
             </div>
         </div>
-
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
+        <script>
+            function printComplaint() {
+                // Call the print function
+                window.print();
+            }
+        </script>
 </body>
+
 </html>
