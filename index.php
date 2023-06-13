@@ -4,7 +4,7 @@ require_once 'BusinessServices/controllers/ManageUserController/loginuserControl
 require_once 'BusinessServices/controllers/ManageUserController/loginstaffController.php';
 require_once 'BusinessServices/controllers/ManageUserController/registerController.php';
 require_once 'BusinessServices/controllers/ManageConsultationController/complaintController.php';
-require_once 'BusinessServices/controllers/MarriageRegistrationController/marriageRegistrationController.php';
+//require_once 'BusinessServices/controllers/MarriageRegistrationController/marriageRegistrationController.php';
 
 
 //$facade = new MarriageRegistrationController();
@@ -23,15 +23,11 @@ if (isset($_POST['Loginstaff'])) {
     // User login request
     if (isset($_POST['Loginuser'])) {
         $facade = new loginuserController();
-        if ($facade->login()){
-            $getApplicant = new MarriageRegistrationController();
-            $getApplicant->displayApplicant();
-        }
+        $facade->login();
     } 
     else {
         // Display the user login view
         include 'App/ManageUser/loginuser.php';
-        exit();
     }
 }
                     
@@ -45,8 +41,8 @@ if (isset($_POST['daftar'])) {
     $address = $_POST['address'];
     $password = $_POST['password'];
 
-    $usercourse = new registerController();
-    $usercourse->register($noIC, $email, $name, $gender, $phonenum, $address, $password);
+    $adduser = new registerController();
+    $adduser->register($noIC, $email, $name, $gender, $phonenum, $address, $password);
 }
 
 if (isset($_POST['submitcomplaint'])) {
