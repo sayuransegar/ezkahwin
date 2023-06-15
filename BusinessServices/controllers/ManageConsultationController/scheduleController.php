@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../models/ManageConsultationModel/consultation.php';
 
-class ScheduleController
+class ScheduleController extends Connection
 {
     private $consultationModel;
 

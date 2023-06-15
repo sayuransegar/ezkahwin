@@ -35,8 +35,6 @@
                             echo "<tr>";
                             echo "<th style='border: 1px solid black; padding: 5px; text-align: center;'>IC/Nama Pemohon</th>";
                             echo "<th style='border: 1px solid black; padding: 5px; text-align: center;'>Status</th>";
-                            echo "<th style='border: 1px solid black; padding: 5px; text-align: center;'>Tarikh Temujanji</th>";
-                            echo "<th style='border: 1px solid black; padding: 5px; text-align: center;'>Masa Temujanji</th>";
                             echo "<th style='border: 1px solid black; padding: 5px; text-align: center;'>Tindakan</th>";
                             echo "</tr>";
 
@@ -48,11 +46,8 @@
                                 echo "<tr>";
                                 echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'></td>";
                                 echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'></td>";
-                                echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>$consultation_date</td>";
-                                echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>$consultation_time</td>";
                                 echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>";
-                                echo "<a href='approvalApplication.php?id=$consultation_ID' style='text-decoration: none;'><i class='fas fa-edit'></i></a>&nbsp&nbsp&nbsp";
-                                echo "<a href='sessionInterface.php?id=$consultation_ID' style='text-decoration: none;'><i class='fas fa-calendar-alt'></i></a>";
+                                echo "<a href='approvalApplication.php?id=$consultation_ID' style='text-decoration: none;'><i class='fas fa-edit'></i></a>";
                                 echo "</td>";
                                 echo "</tr>";
                             }
@@ -63,6 +58,12 @@
                             echo "No complaint found.";
                         }
                         ?>
+                        <div class="position-absolute end-0 me-3">
+                            <button type="submit" class="btn btn-warning" onclick="window.location.href='sessionInterface.php'">SET TEMU JANJI</button>
+                        </div>
+                        <div class="d-flex flex-row bd-highlight mb-3">
+                            <button type="submit" class="btn btn-info" onclick="window.location.href='scheduleInterface.php'">LIHAT JADUAL</button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -18,7 +18,7 @@
             <?php include "../Component/sidebar.php"; ?>
 
             <div class="col-md-9 content">
-                <div class="content-title bg-primary text-white p-3">
+                <div class="content-title bg-success text-white p-3">
                     <h1 class="h3 m-0">Aduan/Khidmat Nasihat</h1>
                 </div>
                 <div class="contentBox mt-3">
@@ -35,23 +35,25 @@
                                         <div class="col-sm-10">
                                             <select class="form-select" id="consultation_additional" name="consultation_additional" aria-label="Default select example">
                                                 <option selected>Perlu sesi tambahan?</option>
-                                                <option value="1">Ya</option>
-                                                <option value="2">Tidak</option>
+                                                <option value="Ya">Ya</option>
+                                                <option value="Tidak">Tidak</option>
                                             </select>
                                         </div>
                                         <label for="consultation_date" class="col-sm-2 col-form-label">Tarikh Janji Temu</label>
                                         <div class="col-sm-10">
-                                            <input type="date" class="form-control" id="consultation_date">
+                                            <input type="date" class="form-control" id="consultation_date" name="consultation_date">
                                         </div>
                                         <label for="consultation_time" class="col-sm-2 col-form-label">Masa Janji Temu</label>
                                         <div class="col-sm-10">
                                             <input type="time" class="form-control" id="consultation_time" name="consultation_time">
                                         </div>
                                     </div>
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-primary" name="submitsession">HANTAR</button>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button type="button" class="btn btn-danger" onclick="window.location.href='listOfApplication.php'">BATAL</button>
+                                    </div>
                                 </form>
-                                <div class="d-flex justify-content-center">
-                                    <button type="button" class="btn btn-danger" onclick="window.location.href='listOfApplication.php'">HANTAR</button>
-                                </div>
                             </div>
                         </div>
                     </div>
