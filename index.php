@@ -25,7 +25,9 @@ if (isset($_POST['Loginstaff'])) {
     if (isset($_POST['Loginuser'])) {
         $facade = new loginuserController();
         $facade->login();
+
     } else {
+
         // Display the user login view
         include 'App/ManageUser/loginuser.php';
     }
@@ -40,8 +42,8 @@ if (isset($_POST['daftar'])) {
     $address = $_POST['address'];
     $password = $_POST['password'];
 
-    $usercourse = new registerController();
-    $usercourse->register($noIC, $email, $name, $gender, $phonenum, $address, $password);
+    $adduser = new registerController();
+    $adduser->register($noIC, $email, $name, $gender, $phonenum, $address, $password);
 }
 
 if (isset($_POST['submitcomplaint'])) {
