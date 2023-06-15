@@ -1,16 +1,16 @@
 <?php
 
-require_once __DIR__ . '/../../models/ManageUserModel/user.php';
+require_once __DIR__ . '/../../Model/MANAGEUSERMODEL/ManageUser.php';
 
 
-class loginuserController extends user
+class loginuserController extends ManageUser
 {
     public function login() {
         if(isset($_POST['Loginuser'])){
             $icnum = $_REQUEST['icnum'];
             $password = $_REQUEST['pass'];
     
-            $loginuserModel = new user();
+            $loginuserModel = new ManageUser();
     
             $loginResult = $loginuserModel->getUser($icnum, $password);
     
@@ -25,7 +25,7 @@ class loginuserController extends user
     
                 setcookie("user_data", json_encode($userArray));
     
-                header("Location: ../../ezkahwin/App/ManageConsultation/IDVerification.php");
+                header("Location: ../../ezkahwin/App/ManageUser/home.php");
                 exit();
             } else {
                 echo "Invalid login credentials"; // Debugging statement

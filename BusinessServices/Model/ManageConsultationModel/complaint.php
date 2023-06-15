@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../models/db.php';
+require_once __DIR__ . '/../../Model/db.php';
 
 class complaint extends Connection
 {
