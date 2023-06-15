@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../models/ManageConsultationModel/consultation.php';
+require_once __DIR__ . '/../Model/ManageConsultationModel/consultation.php';
 
 class ScheduleController
 {

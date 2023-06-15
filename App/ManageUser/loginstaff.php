@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
 </head>
 
-<body class="page-bg">
+<body>
   <div>
     <header>
       <img src="https://i.imgur.com/D3gqdM6.jpg" alt="e-Munakahat Header Image" class="header-img" />

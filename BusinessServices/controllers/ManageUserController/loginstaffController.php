@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../../models/ManageUserModel/staff.php';
+require_once __DIR__ . '/../../Model/MANAGEUSERMODEL/staff.php';
 
 
 class loginstaffController extends staff
@@ -25,7 +25,7 @@ class loginstaffController extends staff
     
                 setcookie("user_data", json_encode($userArray));
     
-                header("Location: ../../ezkahwin/App/ManageConsultation/listOfApplication.php");
+                header("Location: ../../ezkahwin/App/ManageUser/profilepengguna.php");
                 exit();
             } else {
                 echo "Invalid login credentials"; // Debugging statement

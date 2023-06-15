@@ -19,29 +19,29 @@ if (isset($_COOKIE['user_data'])) {
     </div>
     <div class="sidebar-items w-auto mt-3">
         <ul class="nav flex-column">
-            <li class="nav-item sidebar-item p-2">
-                <a class="nav-link" href="#">Profil Pengguna</a>
+            <li class="nav-item sidebar-item p-2 <?php echo $activePage === 'profil' ? 'active' : ''; ?>">
+                <a class="nav-link" href="../../../ezkahwin/App/ManageUser/editprofile.php">Kemas Kini Profil</a>
             </li>
-            <li class="nav-item sidebar-item p-2">
+            <li class="nav-item sidebar-item p-2 <?php echo $activePage === 'kursus' ? 'active' : ''; ?>">
                 <a class="nav-link" href="#">Permohonan Kursus Perkahwinan</a>
             </li>
-            <li class="nav-item sidebar-item p-2">
+            <li class="nav-item sidebar-item p-2 <?php echo $activePage === 'permohonan' ? 'active' : ''; ?>">
                 <a class="nav-link" href="#">Permohonan Perkahwinan</a>
             </li>
-            <li class="nav-item sidebar-item p-2">
-                <a class="nav-link" href="#">Pendaftaran Perkahwinan</a>
+            <li class="nav-item sidebar-item p-2 <?php echo $activePage === 'pendaftaran' ? 'active' : ''; ?>">
+                <a class="nav-link" href="../../../ezkahwin-backup/index.php">Pendaftaran Perkahwinan</a>
             </li>
-            <li class="nav-item sidebar-item p-2">
-                <a class="nav-link" href="#">Kad Kahwin</a>
+            <li class="nav-item sidebar-item p-2 <?php echo $activePage === 'kad' ? 'active' : ''; ?>">
+                <a class="nav-link" href="../../../ezkahwin-backup/App/MarriageCard/ProofOfPayment.php">Kad Kahwin</a>
             </li>
-            <li class="nav-item sidebar-item p-2">
-                <a class="nav-link" href="#">Aduan/Khidmat Nasihat</a>
+            <li class="nav-item sidebar-item p-2 <?php echo $activePage === 'aduan' ? 'active' : ''; ?>">
+                <a class="nav-link" href="../../../ezkahwin/App/ManageConsultation/IDVerification.php">Aduan/Khidmat Nasihat</a>
             </li>
-            <li class="nav-item sidebar-item p-2">
+            <li class="nav-item sidebar-item p-2 <?php echo $activePage === 'insentif' ? 'active' : ''; ?>">
                 <a class="nav-link" href="#">Insentif</a>
             </li>
             <li class="nav-item sidebar-item sidebar-item-last p-2">
-                <a class="nav-link" href="../../../ezkahwin/index.php">Log Keluar</a>
+                <a class="nav-link" href="#">Log Keluar</a>
             </li>
         </ul>
     </div>

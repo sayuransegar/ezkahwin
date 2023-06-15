@@ -5,11 +5,11 @@
   <title>Login | e-Munakahat</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="public/css/profilemanage.css">
+  <link rel="stylesheet" href="../../../ezkahwin/public/css/profilemanage.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
 </head>
 
-<body class="page-bg">
+<body>
   <div>
     <header>
       <img src="https://i.imgur.com/D3gqdM6.jpg" alt="e-Munakahat Header Image" class="header-img" />

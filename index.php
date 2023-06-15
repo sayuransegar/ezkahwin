@@ -1,8 +1,8 @@
 <?php
 
-require_once 'BusinessServices/controllers/ManageUserController/loginuserController.php';
-require_once 'BusinessServices/controllers/ManageUserController/loginstaffController.php';
-require_once 'BusinessServices/controllers/ManageUserController/registerController.php';
+require_once 'BusinessServices/controllers/MANAGEUSERCONTROLLER/loginuserController.php';
+require_once 'BusinessServices/controllers/MANAGEUSERCONTROLLER/loginstaffController.php';
+require_once 'BusinessServices/controllers/MANAGEUSERCONTROLLER/registerController.php';
 require_once 'BusinessServices/controllers/ManageConsultationController/complaintController.php';
 //require_once 'BusinessServices/controllers/MarriageRegistrationController/marriageRegistrationController.php';
 

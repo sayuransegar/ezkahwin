@@ -1,14 +1,14 @@
 <?php
 
-require_once __DIR__ . '/../../models/ManageUserModel/user.php';
+require_once __DIR__ . '/../../Model/MANAGEUSERMODEL/ManageUser.php';
 
 
-class registerController extends user
+class registerController extends ManageUser
 {
     public function register($noIC, $email, $name, $gender, $phonenum, $address, $password)
     {
 
-        $useraddcourseModel = new user();
+        $useraddcourseModel = new ManageUser();
         $addcourseResult = $useraddcourseModel->addUser($noIC, $email, $name, $gender, $phonenum, $address, $password);
 
         if (!$addcourseResult) {
