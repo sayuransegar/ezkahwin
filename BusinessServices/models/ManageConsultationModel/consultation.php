@@ -19,19 +19,28 @@ class consultation extends Connection
     public function getDataConsultation()
     {
         try {
-            $connection = $this->getConnection();
             $query = "SELECT consultation_ID, consultation_date, consultation_time FROM consultation";
-            $result = mysqli_query($connection, $query);
-
-            if (!$result) {
-                throw new Exception("Error executing query: " . mysqli_error($connection));
-            }
-
-            $consultationData = mysqli_fetch_all($result, MYSQLI_ASSOC);
-            mysqli_free_result($result);
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+            $consultationData = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             return $consultationData;
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return null;
+        }
+    }
+
+    public function getDataStatus()
+    {
+        try {
+            $query = "SELECT status_ID, status_type FROM status";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+            $statusData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            return $statusData;
+        } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
             return null;
         }

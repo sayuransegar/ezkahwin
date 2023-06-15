@@ -26,7 +26,7 @@
             <?php include "../Component/sidebar.php"; ?>
 
             <div class="col-md-9 content">
-                <div class="content-title bg-primary text-white p-3">
+                <div class="content-title bg-success text-white p-3">
                     <h1 class="h3 m-0">Aduan/Khidmat Nasihat</h1>
                 </div>
                 <div class="contentBox mt-3">

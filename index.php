@@ -64,3 +64,14 @@ if (isset($_POST['submitsession'])) {
     $session->consultation($consultation_session_no, $consultation_additional, $consultation_date,  $consultation_time);
 }
 
+if (isset($_POST['getComplaintData'])) {
+    $complaintController= new complaintController();
+    $complaintController->getDataComplaint();
+}
+
+if (isset($_POST['getConsultationtData'])) {
+    $consultationController= new consultationController();
+    $consultationController->getDataConsultation();
+}
+
+?>

@@ -18,7 +18,7 @@
             <?php include "../Component/sidebar.php"; ?>
 
             <div class="col-md-9 content">
-                <div class="content-title bg-primary text-white p-3">
+                <div class="content-title bg-success text-white p-3">
                     <h1 class="h3 m-0">Aduan/Khidmat Nasihat</h1>
                 </div>
                 <div class="contentBox mt-3">
@@ -49,7 +49,9 @@
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <button type="submit" class="btn btn-danger" name="submitsession">HANTAR</button>
+                                        <button type="submit" class="btn btn-primary" name="submitsession">HANTAR</button>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button type="button" class="btn btn-danger" onclick="window.location.href='listOfApplication.php'">BATAL</button>
                                     </div>
                                 </form>
                             </div>
