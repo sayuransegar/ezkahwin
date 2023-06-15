@@ -12,7 +12,7 @@ class consultationController extends consultation
             echo "Failed"; // Debugging statement
             header("refresh:3; ../../ezkahwin/App/ManageConsultation/sessionInterface.php");
         } else {
-            header("Location: ../../ezkahwin/App/ManageConsultation/sessionInterface.php");
+            header("Location: ../../ezkahwin/App/ManageConsultation/listOfApplication.php");
             exit();
         }
     }

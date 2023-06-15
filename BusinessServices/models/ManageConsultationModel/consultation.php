@@ -1,12 +1,12 @@
 <?php
 require_once __DIR__ . '/../db.php';
 
-class Consultation extends Connection
+class consultation extends Connection
 {
     public function addConsultation($consultation_session_no, $consultation_additional, $consultation_date,  $consultation_time)
     {
         $connection = $this->getConnection();
-        $query = "INSERT INTO consultation VALUES (0, '$consultation_session_no', '$consultation_additional','$consultation_date', '$consultation_time')";
+        $query = "INSERT INTO consultation VALUE (0, '$consultation_session_no', '$consultation_additional','$consultation_date', '$consultation_time')";
 
         $result = mysqli_query($connection, $query);
         if (!$result) {
