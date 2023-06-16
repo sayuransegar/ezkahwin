@@ -39,7 +39,7 @@ class IncentiveProfile {
         // Execute the prepared statement
         if ($stmt->execute()) {
             echo '<script>
-                alert("Successfull");
+                alert("Successfully retrieved data");
                 window.location.href = "ApplicantsListForm.html";
             </script>';
         } else {

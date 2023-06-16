@@ -1,16 +1,21 @@
 <?php
 // controller.php
-require_once 'ProfileController.php';
+require_once 'IncentiveProfile.php';
 
-class Controller {
-    private $model;
+class ProfileController {
+    private $incentiveProfile;
 
     public function __construct() {
-        $this->model = new Model();
+        $this->incentiveProfile = new IncentiveProfile();
     }
 
-    public function getData($ic_number) {
-        return $this->model->getData($ic_number);
+    public function saveData($ic_number, $name, $birth_date, $birth_place, $address, $phone_number) {
+        $this->incentiveProfile->saveData($ic_number, $name, $birth_date, $birth_place, $address, $phone_number);
+    }
+
+    public function searchData($ic_number) {
+        return $this->incentiveProfile->searchData($ic_number);
     }
 }
+
 ?>
