@@ -12,34 +12,26 @@
 
 <body>
     <?php
+    require_once 'C:\xamppnew\htdocs\ezkahwin\BusinessServices\controllers\ManageConsultationController\consultationController.php';
     require_once 'C:\xamppnew\htdocs\ezkahwin\BusinessServices\controllers\ManageConsultationController\complaintController.php';
 
     $complaintController = new complaintController();
     $complaintData = $complaintController->getDataComplaint();
+    $complaintController = new complaintController();
+    $statusData = $complaintController->getStatus();
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $updatedStatus = $_POST['status'];
+
+    // Assuming you have the consultation ID available
+    $consultationID = 1; // Replace with the actual consultation ID
+
+    // Call the method in the controller to update the status
+    $complaintController->updateStatus($consultationID, $updatedStatus);
+}
     ?>
 
     <?php include "../Component/header.php"; ?>
-
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Assuming you have a form field named 'action' to determine the user's action
-        $action = $_POST['action'];
-
-        // Update the status based on the user's action
-        if ($action == "LULUS") {
-            $status = "LULUS";
-        } elseif ($action == "TOLAK") {
-            $status = "GAGAL";
-        } else {
-            $status = "PENDING";
-        }
-
-        // Save the updated status in the database or wherever you're storing the data
-        // Redirect to listOfApplication.php
-        header("Location: listOfApplication.php");
-        exit();
-    }
-    ?>
 
     <div class="container-fluid">
         <div class="row">
@@ -52,7 +44,7 @@
                 <div class="contentBox mt-3">
                     <div class="desc">
                         <div style="margin-top: 30px; margin-left: 10px;">
-                            <form class="row g-3" method="POST" action="../../../ezkahwin/index.php" name="action">
+                            <form class="row g-3" method="POST" action="../../../ezkahwin/index.php">
                                 <h6 align="left"><b>MAKLUMAT ADUAN</b></h6><br><br>
                                 <?php if (!empty($complaintData)) { ?>
                                     <div class="mb-3 row" style="margin-top: 10px;">
@@ -67,9 +59,9 @@
                                     </div>
                                 <?php } ?>
                                 <div class="d-flex justify-content-center">
-                                    <button type="button" class="btn btn-success" onclick="window.location.href='listOfApplication.php'">LULUS</button>
+                                    <button type="button" class="btn btn-success" name="action" value="1" onclick="window.location.href='listOfApplication.php'">LULUS</button>
                                     &nbsp;&nbsp;&nbsp;
-                                    <button type="button" class="btn btn-danger" onclick="window.location.href='listOfApplication.php'">TOLAK</button>
+                                    <button type="button" class="btn btn-danger" name="action" value="2" onclick="window.location.href='listOfApplication.php'">TOLAK</button>
                                 </div>
                             </form>
                             <br><br>

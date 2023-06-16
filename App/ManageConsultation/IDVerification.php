@@ -27,7 +27,7 @@
                 <div class="contentBox mt-3">
                     <div class="desc">
                         <div style="margin-top: 100px;">
-                            <form class="row g-3">
+                            <form class="row g-3" action="../../../ezkahwin/index.php" method="POST">
                                 <h6 align="center">NO KAD PENGENALAN / PASSPORT</h6><br><br>
                                 <div class="d-flex justify-content-center">
                                     <input type="text" style="width: 300px; height: 35px;" class="form-control form-control-sm" id="inputIC">

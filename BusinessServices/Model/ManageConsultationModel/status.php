@@ -3,24 +3,23 @@ require_once __DIR__ . '/../db.php';
 
 class status extends Connection
 {
-    public function getDataStatus()
+    public function updateStatus($consultationID, $status)
     {
         try {
             $connection = $this->getConnection();
-            $query = "SELECT status_ID, status_type FROM status";
-            $result = mysqli_query($connection, $query);
+            $query = "UPDATE complaint SET status = ? WHERE consultation_ID = ?";
+            $stmt = $connection->prepare($query);
+            $stmt->bind_param("si", $status, $consultationID);
 
-            if (!$result) {
-                throw new Exception("Error executing query: " . mysqli_error($connection));
+            if (!$stmt->execute()) {
+                throw new Exception("Error executing query: " . $stmt->error);
             }
 
-            $statusData = mysqli_fetch_all($result, MYSQLI_ASSOC);
-            mysqli_free_result($result);
-
-            return $statusData;
+            $stmt->close();
+            return true;
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();
-            return null;
+            return false;
         }
     }
 }
