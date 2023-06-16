@@ -66,26 +66,27 @@
                                 foreach ($complaintData as $complaint) {
                                     $complaint_ID = $complaint['complaint_ID'];
                                     $complaint_date = $complaint['complaint_date'];
+                                    $consultation_date = ''; // Initialize the variable with an empty value
 
                                     foreach ($consultationData as $consultation) {
                                         if ($consultation['consultation_ID'] === $complaint_ID) {
-                                            $consultation_ID = $consultation['consultation_ID'];
                                             $consultation_date = $consultation['consultation_date'];
-
-                                            echo "<tr>";
-                                            echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'></td>";
-                                            echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>$complaint_date</td>";
-                                            echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>$consultation_date</td>";
-                                            echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>DALAM PROSESS</td>";
-                                            echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>";
-                                            echo "<a href='complaintForm.php?id=$complaint_ID' style='text-decoration: none;'><i class='fas fa-eye'></i></a>&nbsp;";
-                                            echo "<a href='javascript:void(0);' onclick='printComplaint($complaint_ID)' style='text-decoration: none;'><i class='fas fa-print'></i></a>&nbsp;";
-                                            echo "<a href='applicationDetails.php?id=$complaint_ID' style='text-decoration: none;' onclick='return confirm(\"Are you sure you want to delete this complaint?\");'><i class='fas fa-trash'></i></a>&nbsp;";
-                                            echo "<a href='complaintForm.php?id=$complaint_ID' style='text-decoration: none;'><i class='fas fa-edit'></i></a>";
-                                            echo "</td>";
-                                            echo "</tr>";
+                                            break; // Exit the inner loop once a matching consultation is found
                                         }
                                     }
+
+                                    echo "<tr>";
+                                    echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'></td>";
+                                    echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>$complaint_date</td>";
+                                    echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>$consultation_date</td>";
+                                    echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>DALAM PROSESS</td>";
+                                    echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>";
+                                    echo "<a href='complaintForm.php?id=$complaint_ID' style='text-decoration: none;'><i class='fas fa-eye'></i></a>&nbsp;";
+                                    echo "<a href='javascript:void(0);' onclick='printComplaint($complaint_ID)' style='text-decoration: none;'><i class='fas fa-print'></i></a>&nbsp;";
+                                    echo "<a href='applicationDetails.php?id=$complaint_ID' style='text-decoration: none;' onclick='return confirm(\"Are you sure you want to delete this complaint?\");'><i class='fas fa-trash'></i></a>&nbsp;";
+                                    echo "<a href='complaintForm.php?id=$complaint_ID' style='text-decoration: none;'><i class='fas fa-edit'></i></a>";
+                                    echo "</td>";
+                                    echo "</tr>";
                                 }
                                 echo "</table>";
                                 echo "<br><br>";

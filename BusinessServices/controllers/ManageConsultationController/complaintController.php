@@ -21,7 +21,7 @@ class complaintController extends complaint
     {
         try {
             $connection = $this->getConnection();
-            $query = "SELECT complaint_ID, complaint_date, complaint_desc FROM complaint";
+            $query = "SELECT complaint_ID, complaint_date, complaint_desc, complaint_date FROM complaint"; // Include the complaint_date column
             $result = mysqli_query($connection, $query);
 
             if (!$result) {
@@ -37,6 +37,7 @@ class complaintController extends complaint
             return null;
         }
     }
+
 
     public function latestComplaint($complaint_ID, $complaint_date, $complaint_desc)
     {
@@ -67,28 +68,9 @@ class complaintController extends complaint
             header("refresh:3; ../../ezkahwin/App/ManageConsultation/complaintForm.php");
         }
     }
-    
-    // public function updateStatus($complaint_ID, $status_type)
-    // {
-    //     try {
-    //         $connection = $this->getConnection();
-    //         $status_type = mysqli_real_escape_string($connection, $status_type);
-    
-    //         $query = "UPDATE complaints SET status = '$status_type' WHERE complaint_ID = '$complaint_ID'";
-    //         $result = mysqli_query($connection, $query);
-    
-    //         if (!$result) {
-    //             throw new Exception("Error executing query: " . mysqli_error($connection));
-    //         }
-    
-    //         return true;
-    //     } catch (Exception $e) {
-    //         echo "Error: " . $e->getMessage();
-    //         return false;
-    //     }
-    // }
 
-    public function updateStatus($consultationID, $status) {
+    public function updateStatus($consultationID, $status)
+    {
         try {
             $connection = $this->getConnection();
             $query = "UPDATE consultation SET status = ? WHERE consultation_ID = ?";
@@ -107,6 +89,4 @@ class complaintController extends complaint
             echo "Error: " . $e->getMessage();
         }
     }
-
-    
 }
