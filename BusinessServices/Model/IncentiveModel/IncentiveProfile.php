@@ -13,14 +13,14 @@ class IncentiveProfile {
 
     public function saveData($ic_number, $name, $birth_date, $birth_place, $address, $phone_number) {
         // Prepare and bind the SQL statement
-        $stmt = $this->db->prepare("INSERT INTO pemohon (ic_number, name, birth_date, birth_place, address, phone_number) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt = $this->db->prepare("INSERT INTO pemohon (ic_num, name, birth_date, birth_place, address, phone_number) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("ssssss", $ic_number, $name, $birth_date, $birth_place, $address, $phone_number);
 
         // Execute the prepared statement
         if ($stmt->execute()) {
             echo '<script>
                 alert("Successfully saved");
-                window.location.href = "ApplicationRuleForm.html";
+                window.location.href = "App/ManageIncentive/ApplicationRuleForm.php";
             </script>';
         } else {
             echo "Error: " . $stmt->error;
@@ -33,14 +33,14 @@ class IncentiveProfile {
 
     public function searchData($ic_number) {
         // Prepare the SQL statement
-        $stmt = $this->db->prepare("SELECT * FROM pemohon WHERE ic_number = ?");
+        $stmt = $this->db->prepare("SELECT * FROM pemohon WHERE ic_num = ?");
         $stmt->bind_param("s", $ic_number);
 
         // Execute the prepared statement
         if ($stmt->execute()) {
             echo '<script>
                 alert("Successfully retrieved data");
-                window.location.href = "ApplicantsListForm.html";
+                window.location.href = "App/ManageIncentive/ApplicantsListForm.php";
             </script>';
         } else {
             echo "Error: " . $stmt->error;

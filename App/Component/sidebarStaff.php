@@ -29,13 +29,13 @@ if (isset($_COOKIE['staff_data'])) {
                 <a class="nav-link" href="#">Permohonan Perkahwinan</a>
             </li>
             <li class="nav-item sidebar-item p-2 <?php echo $activePage === 'pendaftaran' ? 'active' : ''; ?>">
-                <a class="nav-link" href="../../../ezkahwin-backup/index.php">Pendaftaran Perkahwinan</a>
+                <a class="nav-link" href="../../../ezkahwin/App/MarriageRegistration/MarriageRegistrationListAdmin.php">Pendaftaran Perkahwinan</a>
             </li>
             <li class="nav-item sidebar-item p-2 <?php echo $activePage === 'kad' ? 'active' : ''; ?>">
-                <a class="nav-link" href="../../../ezkahwin-backup/App/MarriageCard/ProofOfPayment.php">Kad Kahwin</a>
+                <a class="nav-link" href="../../../ezkahwin/App/MarriageCard/MarriageCardUserList.php">Kad Kahwin</a>
             </li>
             <li class="nav-item sidebar-item p-2 <?php echo $activePage === 'aduan' ? 'active' : ''; ?>">
-                <a class="nav-link" href="../../../ezkahwin/App/ManageConsultation/IDVerification.php">Aduan/Khidmat Nasihat</a>
+                <a class="nav-link" href="../../../ezkahwin/App/ManageConsultation/listOfApplication.php">Aduan/Khidmat Nasihat</a>
             </li>
             <li class="nav-item sidebar-item p-2 <?php echo $activePage === 'insentif' ? 'active' : ''; ?>">
                 <a class="nav-link" href="#">Insentif</a>

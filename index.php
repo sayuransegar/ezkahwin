@@ -8,9 +8,13 @@ require_once 'BusinessServices/controllers/ManageConsultationController/consulta
 require_once 'BusinessServices/controllers/MANAGEUSERCONTROLLER/editprofileController.php';
 require_once 'BusinessServices/controllers/MANAGEUSERCONTROLLER/editpenggunaController.php';
 require_once 'BusinessServices/controllers/MANAGEUSERCONTROLLER/deletepenggunaController.php';
+require_once 'BusinessServices/controllers/MarriageRegistrationController/MarriageRegistrationController.php';
+require_once 'BusinessServices/controllers/MarriageRegistrationController/NewMarriageRegistrationController.php';
+require_once 'BusinessServices/controllers/MarriageRegistrationController/MarriageRegistrationApprovalController.php';
+require_once 'BusinessServices/controllers/MarriageCardController/ProofOfPaymentController.php';
 
 
-
+session_start();
 //$facade = new MarriageRegistrationController();
 
 if (isset($_POST['Loginstaff'])) {
@@ -38,13 +42,7 @@ if (isset($_POST['Loginstaff'])) {
 
     $adduser = new registerController();
     $adduser->register($noIC, $email, $name, $gender, $phonenum, $address, $password);
-} else {
-
-    // Display the user login view
-    include 'App/ManageUser/loginuser.php';
-}
-
-if (isset($_POST['id']) && isset($_COOKIE['user_data'])) {
+} elseif (isset($_POST['id']) && isset($_COOKIE['user_data'])) {
     $id = $_POST['id'];
     $email = $_POST['email'];
     $name = $_POST['name'];
@@ -54,9 +52,7 @@ if (isset($_POST['id']) && isset($_COOKIE['user_data'])) {
 
     $editProfile = new EditProfileController();
     $editProfile->profile($email, $name, $gender, $phonenum, $address, $id);
-}
-
-if (isset($_POST['uid'])) {
+} elseif (isset($_POST['uid'])) {
     $id = $_POST['uid'];
     $email = $_POST['email'];
     $name = $_POST['name'];
@@ -66,25 +62,37 @@ if (isset($_POST['uid'])) {
 
     $editProfile = new editPengguna();
     $editProfile->userUpdate($email, $name, $gender, $phonenum, $address, $id);
-}
-
-if (isset($_GET['did'])) {
+} elseif (isset($_GET['did'])) {
     $id = $_GET['did'];
 
     $deleteProfile = new deletePengguna();
     $deleteProfile->deleteUser($id);
-}
+} elseif (isset($_POST['action']) && $_POST['action'] === 'searchPartner') {
+    $partner_ic = $_POST['partner_ic'];
+    $marriageRegistrationController = new MarriageRegistrationController();
+    $marriageRegistrationController->displayPartner($partner_ic);
+} elseif (isset($_POST['submit'])) {
+    $marriage_category = $_POST['marriage_category'];
+    $marriage_license_number = $_POST['marriage_license_number'];
 
+    $newRegister = new newMarriageController();
+    $newRegister->newMarriage($marriage_category, $marriage_license_number);
 
-if (isset($_POST['submitcomplaint'])) {
+    echo $content;
+
+} elseif (isset($_POST['submitPayment'])) {
+    $proof_of_payment = $_REQUEST['proof_of_payment'];
+
+    $card = new newMarriageCard();
+    $card->marriageCard($proofofpayment);
+
+} elseif (isset($_POST['submitcomplaint'])) {
     $complaint_date = $_POST['complaint_date'];
     $complaint_desc = $_POST['complaint_desc'];
 
     $usercomplaint = new complaintController();
     $usercomplaint->complaint($complaint_date, $complaint_desc);
-}
-
-if (isset($_POST['submitsession'])) {
+} elseif (isset($_POST['submitsession'])) {
     $consultation_session_no = $_POST['consultation_session_no'];
     $consultation_additional = $_POST['consultation_additional'];
     $consultation_date = $_POST['consultation_date'];
@@ -92,14 +100,14 @@ if (isset($_POST['submitsession'])) {
 
     $session = new consultationController();
     $session->consultation($consultation_session_no, $consultation_additional, $consultation_date,  $consultation_time);
-}
-
-if (isset($_POST['getComplaintData'])) {
+} elseif (isset($_POST['getComplaintData'])) {
     $complaintController = new complaintController();
     $complaintController->getDataComplaint();
-}
-
-if (isset($_POST['getConsultationtData'])) {
+} elseif (isset($_POST['getConsultationtData'])) {
     $consultationController = new consultationController();
     $consultationController->getDataConsultation();
+}else {
+
+    // Display the user login view
+    include 'App/ManageUser/loginuser.php';
 }

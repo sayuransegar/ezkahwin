@@ -15,7 +15,10 @@
 
     <div class="container-fluid">
         <div class="row">
-            <?php include "../Component/sidebar.php"; ?>
+            <?php
+            $activePage = 'aduan';
+            include "../Component/sidebarStaff.php";
+            ?>
 
             <div class="col-md-9 content">
                 <div class="content-title bg-success text-white p-3">

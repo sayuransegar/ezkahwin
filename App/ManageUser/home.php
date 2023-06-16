@@ -1,5 +1,5 @@
 <?php
-include('../../BusinessServices/MODEL/db.php');
+include('../../BusinessServices/Model/db.php');
 session_start();
 ?>
 

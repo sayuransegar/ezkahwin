@@ -21,14 +21,14 @@ class Model {
         // $phone_number = $data['phone_number'];
 
         // Prepare and bind the SQL statement
-        $stmt = $this->db->prepare("INSERT INTO pemohon (ic_number, name, birth_date, birth_place, address, phone_number) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt = $this->db->prepare("INSERT INTO pemohon (ic_num, name, birth_date, birth_place, address, phone_number) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("ssssss", $ic_number, $name, $birth_date, $birth_place, $address, $phone_number);
 
         // Execute the prepared statement
         if ($stmt->execute()) {
             ?> <script>
                 alert("Successfully saved");
-                window.location.href = "ApplicationRuleForm.html";
+                window.location.href = "App/ManageIncentive/ApplicationRuleForm.php";
             </script><?php
         } else {
             echo "Error: " . $stmt->error;

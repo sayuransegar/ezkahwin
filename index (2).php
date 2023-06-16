@@ -2,7 +2,7 @@
 // index (2).php
 
 //if (isset($_POST['submit'])) {
-    require_once 'IncentiveController.php';
+    require_once 'C:\xampp\htdocs\ezkahwin\BusinessServices\controllers\IncentiveController\IncentiveController.php';
     $controller = new Controller();
 
     $process = isset($_GET['process']) ? $_GET['process']: '';

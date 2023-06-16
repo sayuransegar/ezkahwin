@@ -8,9 +8,6 @@ if (isset($_COOKIE['staff_data'])) {
     $id = $userArray['sid'];
 }
 
-//   $query = "SELECT * FROM `user`";
-//   $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
-//   $count = mysqli_num_rows($result);
 $userData = new allUserData();
 $users = $userData->getUsersData();
 
@@ -81,8 +78,8 @@ $users = $userData->getUsersData();
             ?>
 
             <div class="col-md-9 content">
-                <div class="content-title bg-primary text-white p-3">
-                    <h1 class="h3 m-0">Pendaftaran Baharu</h1>
+                <div class="content-title bg-success text-white p-3">
+                    <h1 class="h3 m-0">Senarai Pengguna</h1>
                 </div>
                 <div class="contentBox mt-3">
                     <div class="desc">
