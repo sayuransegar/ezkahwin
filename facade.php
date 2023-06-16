@@ -1,8 +1,8 @@
 <?php
-require_once 'IncentiveProfile.php';
+require_once 'ProfileController.php';
 
-// Create an instance of the IncentiveProfile class
-$model = new IncentiveProfile();
+// Create an instance of the ProfileController class
+$model = new ProfileController();
 
 // Check if the "CARIAN" button is clicked
 if (isset($_POST['search_button'])) {
