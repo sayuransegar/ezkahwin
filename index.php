@@ -56,8 +56,8 @@ if (isset($_POST['id']) && isset($_COOKIE['user_data'])) {
     $editProfile->profile($email, $name, $gender, $phonenum, $address, $id);
 }
 
-if (isset($_POST['id'])) {
-    $id = $_POST['id'];
+if (isset($_POST['uid'])) {
+    $id = $_POST['uid'];
     $email = $_POST['email'];
     $name = $_POST['name'];
     $gender = $_POST['gender'];

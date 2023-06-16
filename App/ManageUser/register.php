@@ -19,6 +19,7 @@
       </div>
     </header>
     <section class="register-body">
+      <!--When user click here, it will redirect to facade index.php, which is route to connect to controller and model-->
       <form name="register-form" action="../../../ezkahwin/index.php" method="POST" onsubmit="return validateRegisterForm()" class="register-form">
         <input type="text" id="icnum" name="icnum" placeholder="No. Kad Pengenalan" required class="input-field" />
         <input type="email" id="email" name="email" placeholder="Email" required class="input-field" />
