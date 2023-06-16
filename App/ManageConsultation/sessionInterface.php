@@ -25,6 +25,7 @@
                     <div class="desc">
                         <div style="margin-top: 50px;">
                             <div style="margin-top: 30px; margin-left: 10px;">
+                                <!--Connect to facade, to insert session details-->
                                 <form class="row g-3" action="../../../ezkahwin/index.php" method="POST">
                                     <div class="mb-3 row" style="margin-top: 10px;">
                                         <label for="consultation_session_no" class="col-sm-2 col-form-label">No Sesi</label>

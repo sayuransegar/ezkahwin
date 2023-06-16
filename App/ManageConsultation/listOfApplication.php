@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <!-- Call the data -->
     <?php
     require_once 'C:\xampp\htdocs\ezkahwin\BusinessServices\controllers\ManageConsultationController\consultationController.php';
     require_once 'C:\xampp\htdocs\ezkahwin\BusinessServices\controllers\ManageConsultationController\complaintController.php';
@@ -32,6 +33,7 @@
                 </div>
                 <div class="contentBox mt-3">
                     <div class="desc">
+                        <!-- Display all the application -->
                         <?php
                         if (!empty($consultationData)) {
                             echo "<table style='border: 1px solid black; border-collapse: collapse; width: 100%; background-color: white;'>";
