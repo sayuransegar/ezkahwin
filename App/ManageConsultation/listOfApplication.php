@@ -13,9 +13,12 @@
 <body>
     <?php
     require_once 'C:\xamppnew\htdocs\ezkahwin\BusinessServices\controllers\ManageConsultationController\consultationController.php';
+    require_once 'C:\xamppnew\htdocs\ezkahwin\BusinessServices\controllers\ManageConsultationController\complaintController.php';
 
     $consultationController = new consultationController();
     $consultationData = $consultationController->getDataConsultation();
+    $complaintController = new complaintController();
+    $statusData = $complaintController->getStatus();
     ?>
     <?php include "../Component/header.php"; ?>
 
@@ -45,13 +48,12 @@
 
                                 echo "<tr>";
                                 echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'></td>";
-                                echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'></td>";
+                                echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>DALAM PROSES</td>";
                                 echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>";
                                 echo "<a href='approvalApplication.php?id=$consultation_ID' style='text-decoration: none;'><i class='fas fa-edit'></i></a>";
                                 echo "</td>";
                                 echo "</tr>";
                             }
-
                             echo "</table>";
                             echo "<br><br>";
                         } else {
