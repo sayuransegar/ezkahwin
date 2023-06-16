@@ -43,7 +43,7 @@
                                     <button type="submit" onclick="window.location.href = 'applicationDetails.php';" class="btn btn-primary mb-3">CARIAN</button>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <!-- New Application -->
+                                    <!-- Create New Application -->
                                     <h6>SILA KLIK 'PERMOHONAN BARU' JIKA ANDA INGIN MEMBUAT ADUAN/KHIDMAT NASIHAT</h6>
                                     &nbsp;&nbsp;&nbsp;
                                     <button type="button" onclick="window.location.href = 'complaintForm.php';" class="btn btn-danger">PERMOHONAN BARU</button>
@@ -74,7 +74,6 @@
                                             break; // Exit the inner loop once a matching consultation is found
                                         }
                                     }
-
                                     echo "<tr>";
                                     echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'></td>";
                                     echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>$complaint_date</td>";

@@ -24,6 +24,7 @@
                 <div class="contentBox mt-3">
                     <div class="desc">
                         <div style="margin-top: 100px;">
+                            <!--Validate user's previous application-->
                             <form class="row g-3" action="../../../ezkahwin/index.php" method="POST">
                                 <h6 align="center">NO KAD PENGENALAN / PASSPORT</h6><br><br>
                                 <div class="d-flex justify-content-center">

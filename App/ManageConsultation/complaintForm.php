@@ -25,6 +25,7 @@
                     <div class="desc">
                         <div style="margin-top: 30px; margin-left: 10px;">
                             <h6 align="left"><b>MAKLUMAT ADUAN</b></h6><br><br>
+                            <!--Connect to facade, to insert complaint details-->
                             <form class="row g-3" action="../../../ezkahwin/index.php" method="POST">
                                 <div class="mb-3 row" style="margin-top: 10px;">
                                     <label for="complaint_date" class="col-sm-2 col-form-label">Tarikh Aduan</label>

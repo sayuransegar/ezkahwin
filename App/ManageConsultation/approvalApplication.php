@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <!-- Call the data -->
     <?php
     require_once 'C:\xamppnew\htdocs\ezkahwin\BusinessServices\controllers\ManageConsultationController\consultationController.php';
     require_once 'C:\xamppnew\htdocs\ezkahwin\BusinessServices\controllers\ManageConsultationController\complaintController.php';
@@ -21,14 +22,14 @@
     $statusData = $complaintController->getStatus();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $updatedStatus = $_POST['status'];
+        $updatedStatus = $_POST['status'];
 
-    // Assuming you have the consultation ID available
-    $consultationID = 1; // Replace with the actual consultation ID
+        // Assuming you have the consultation ID available
+        $consultationID = ''; // Replace with the actual consultation ID
 
-    // Call the method in the controller to update the status
-    $complaintController->updateStatus($consultationID, $updatedStatus);
-}
+        // Call the method in the controller to update the status
+        $complaintController->updateStatus($consultationID, $updatedStatus);
+    }
     ?>
 
     <?php include "../Component/header.php"; ?>
