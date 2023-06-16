@@ -1,18 +1,15 @@
 <?php
-include('connect_db.php');
-session_start();
 
-if (isset($_GET['did'])) {
-    $id = $_GET['did'];
-    
-    $sql = "DELETE FROM user WHERE id = $id";
-    if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('Delete success');</script>";
-        echo "<script>window.location.href='profilepengguna.php'</script>";
-    } else {
-        echo "<script>alert('Delete failed');</script>";
-        echo "<script>window.location.href='profilepengguna.php'</script>";
+require_once __DIR__ . '/../../Model/MANAGEUSERMODEL/staff.php';
+
+class deletePengguna extends staff
+{
+    public function deleteUser($id)
+    {
+        $manageUserModel = new staff();
+        $manageUserModel->deleteUserById($id);
+
+        header("Location: ../../ezkahwin/App/ManageUser/profilepengguna.php");
+        exit();
     }
-
 }
-?>

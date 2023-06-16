@@ -1,4 +1,4 @@
 <?php
 session_destroy();
-header("Location: loginuser.html");
+header("Location: loginuser.php");
 ?>

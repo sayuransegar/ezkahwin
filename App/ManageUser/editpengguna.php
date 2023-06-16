@@ -1,20 +1,16 @@
 <?php
-// include('connect_db.php');
-// session_start();
+include '../../BusinessServices/Model/db.php';
+require_once 'C:\xampp\htdocs\ezkahwin\BusinessServices\controllers\ManageUserController\editpenggunaController.php';
+session_start();
 
-// if (isset($_GET['eid'])) {
+if (isset($_GET['eid'])) {
+    $id = $_GET['eid'];
 
-//     $id = $_GET['eid'];
-//     $query = "SELECT * FROM `user` WHERE id='$id'";
-//     $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
-//     $row = mysqli_fetch_array($result);
-//     $count = mysqli_num_rows($result);
-// } else {
+    $manageUser = new editPengguna();
+    $user = $manageUser->editUser($id);
 
-//     echo "<script>alert('User id is missing');</script>";
-//     echo "<script>window.location.href='profilepengguna.php'</script>";
-// }
-
+    if ($user) {
+        // Proceed with displaying the form
 ?>
 
 <!DOCTYPE html>
@@ -49,21 +45,21 @@
                         <section class="edit-profile-body">
                             <h3>Profil Pengguna</h3>
                             <!--When user click here, user can view and edit the data, then after finished edit user will click the button then it will redirected to home class -->
-                            <form name="edit-profile-form" action="editpenggunaController.php" method="POST" onsubmit="return validateRegisterForm()" class="edit-profile-form mt-1">
+                            <form name="edit-profile-form" action="../../index.php" method="POST" onsubmit="return validateRegisterForm()" class="edit-profile-form mt-1">
                                 <div>
                                     <label for="icnum">No. Kad Pengenalan:</label>
                                     <br />
-                                    <input type="text" id="icnum" name="icnum" required class="input-field mt-1" disabled value="<?php echo $row['icnum'] ?>" />
+                                    <input type="text" id="icnum" name="icnum" required class="input-field mt-1" disabled value="<?php echo $user['icnum']; ?>" />
                                 </div>
                                 <div>
                                     <label for="email">Email:</label>
                                     <br />
-                                    <input type="email" id="email" name="email" required class="input-field mt-1" value="<?php echo $row['email'] ?>" />
+                                    <input type="email" id="email" name="email" required class="input-field mt-1" value="<?php echo $user['email']; ?>" />
                                 </div>
                                 <div>
                                     <label for="name">Nama:</label>
                                     <br />
-                                    <input type="text" id="name" name="name" required class="input-field mt-1" value="<?php echo $row['name'] ?>" />
+                                    <input type="text" id="name" name="name" required class="input-field mt-1" value="<?php echo $user['name']; ?>" />
                                 </div>
                                 <div>
                                     <label for="gender">Jantina:</label>
@@ -72,14 +68,14 @@
                                         <option value="" disabled selected>
                                             -- Sila Pilih Jantina --
                                         </option>
-                                        <option value="lelaki" <?php echo ($row['gender'] == "lelaki") ? 'selected' : '' ?>>Lelaki</option>
-                                        <option value="perempuan" <?php echo ($row['gender'] == "perempuan") ? 'selected' : '' ?>>Perempuan</option>
+                                        <option value="lelaki" <?php echo ($user['gender'] == "lelaki") ? 'selected' : ''; ?>>Lelaki</option>
+                                        <option value="perempuan" <?php echo ($user['gender'] == "perempuan") ? 'selected' : ''; ?>>Perempuan</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label for="phonenum">No. Telefon:</label>
                                     <br />
-                                    <input type="text" id="phonenum" name="phonenum" placeholder="No. Telefon" required class="input-field mt-1" value="<?php echo $row['phonenum'] ?>" />
+                                    <input type="text" id="phonenum" name="phonenum" placeholder="No. Telefon" required class="input-field mt-1" value="<?php echo $user['phonenum']; ?>" />
                                 </div>
 
                                 <div>
@@ -96,13 +92,13 @@
                                         name="address"
                                         required
                                         class="input-field mt-1"
-                                        value="<?php echo $row['address'] ?>"
+                                        value="<?php echo $user['address']; ?>"
                                     />
                                     </div> -->
                                 <div>
-                                    <input type="hidden" name="id" value="<?php echo $row['id'] ?>" />
+                                    <input type="hidden" name="id" value="<?php echo $user['id']; ?>" />
                                 </div>
-                                <input type="submit" value="Kemaskini Maklumat" class="button-user mt-3" />
+                                <input type="submit" name="editProfileUser" value="Kemaskini Maklumat" class="button-user mt-3" />
                             </form>
                         </section>
 
@@ -117,3 +113,10 @@
 </body>
 
 </html>
+
+<?php
+    } else {
+        echo "User not found.";
+    }
+}
+?>
