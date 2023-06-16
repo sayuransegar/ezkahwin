@@ -43,6 +43,8 @@ $user = $manageUser->getUserById($id);
                 </div>
                 <div class="contentBox mt-3">
                     <div class="desc">
+                <!--When user click here, user can view and edit the data, then after finished edit user will click the button then it will redirected to home class
+                        | also redirect to index.php, which is route to connect to controller and model  -->
                         <form name="edit-profile-form" action="../../index.php" method="POST" onsubmit="return validateRegisterForm()" class="edit-profile-form-user">
                             <p>Nama:</p>
                             <input type="text" id="icnum" name="icnum" required class="input-field2 mt-1" disabled value="<?php echo $user['icnum'] ?>" />

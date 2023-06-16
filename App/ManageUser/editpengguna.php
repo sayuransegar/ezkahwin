@@ -44,7 +44,8 @@ if (isset($_GET['eid'])) {
                     <div class="desc">
                         <section class="edit-profile-body">
                             <h3>Profil Pengguna</h3>
-                            <!--When user click here, user can view and edit the data, then after finished edit user will click the button then it will redirected to home class -->
+                            <!--When user click here, user can view and edit the data, then after finished edit user will click the button then it will redirected to home class
+                        | also redirect to index.php, which is route to connect to controller and model  -->
                             <form name="edit-profile-form" action="../../index.php" method="POST" onsubmit="return validateRegisterForm()" class="edit-profile-form mt-1">
                                 <div>
                                     <label for="icnum">No. Kad Pengenalan:</label>
@@ -83,7 +84,7 @@ if (isset($_GET['eid'])) {
                                     <br />
                                     <input type="password" id="password" name="password" class="input-field mt-1" />
                                 </div>
-                                <!--  <div>
+                                 <div>
                                     <label for="alamat">Alamat Surat-Menyurat:</label>
                                     <br />
                                     <input
@@ -94,9 +95,9 @@ if (isset($_GET['eid'])) {
                                         class="input-field mt-1"
                                         value="<?php echo $user['address']; ?>"
                                     />
-                                    </div> -->
+                                    </div>
                                 <div>
-                                    <input type="hidden" name="id" value="<?php echo $user['id']; ?>" />
+                                    <input type="hidden" name="uid" value="<?php echo $user['id']; ?>" />
                                 </div>
                                 <input type="submit" name="editProfileUser" value="Kemaskini Maklumat" class="button-user mt-3" />
                             </form>

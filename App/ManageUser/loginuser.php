@@ -19,6 +19,7 @@
     </header>
     <section class="login-body">
       <h3>Log Masuk</h3>
+      <!--When user click here, it will redirect to facade index.php, which is route to connect to controller and model-->
       <form action="../../../ezkahwin/index.php" method="POST" class="login-form">
         <input type="hidden" name="user_type" value="user">
         <input type="text" id="icnum" name="icnum" placeholder="No. Kad Pengenalan" required class="input-field" />
@@ -30,7 +31,7 @@
       </a>
       <p>
         <a href="../../../ezkahwin/App/ManageUser/register.php">Daftar</a> |
-        <a href="forgotpassword.html">Tukar Kata Laluan</a>
+        <a href="../../../ezkahwin/App/ManageUser/forgotpassword.php">Tukar Kata Laluan</a>
       </p>
     </section>
   </div>

@@ -13,8 +13,8 @@
 <body>
     <!-- Call the data -->
     <?php
-    require_once 'C:\xamppnew\htdocs\ezkahwin\BusinessServices\controllers\ManageConsultationController\complaintController.php';
-    require_once 'C:\xamppnew\htdocs\ezkahwin\BusinessServices\controllers\ManageConsultationController\consultationController.php';
+    require_once 'C:\xampp\htdocs\ezkahwin\BusinessServices\controllers\ManageConsultationController\complaintController.php';
+    require_once 'C:\xampp\htdocs\ezkahwin\BusinessServices\controllers\ManageConsultationController\consultationController.php';
 
     $complaintController = new complaintController();
     $complaintData = $complaintController->getDataComplaint();

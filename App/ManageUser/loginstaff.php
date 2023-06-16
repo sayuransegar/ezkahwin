@@ -19,6 +19,7 @@
     </header>
     <section class="login-body">
       <h3>Log Masuk</h3>
+      <!--When user click here, it will redirect to facade index.php, which is route to connect to controller and model-->
       <form action="../../../ezkahwin/index.php?user_type=staff" method="POST" class="login-form">
         <input type="hidden" name="user_type" value="staff">
         <input type="text" id="icnum" name="icnum" placeholder="No. Kad Pengenalan" required class="input-field" />

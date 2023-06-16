@@ -9,7 +9,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Header and Sidebar Example</title>
+    <title>Laman Utama | EZKahwin</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="../../../ezkahwin/public/css/styles.css">
@@ -25,7 +25,7 @@ session_start();
             <div class="col-md-9 content">
                 <div class="contentBox mt-3">
                     <div class="desc">
-                        
+                        <!--Contain modules and as a main page-->
                         <div class="">
                             <h1>Selamat Datang Ke EzKahwin</h1>
                             <h3>EzKahwin adalah sebuah platform yang digunakan untuk mempermudahkan urusan perkahwinan anda semua</h3>
