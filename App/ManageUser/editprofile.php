@@ -1,15 +1,17 @@
 <?php
-// include('../../BusinessServices/models/db.php');
-// session_start();
+include('../../BusinessServices/Model/db.php');
+require_once 'C:\xampp\htdocs\ezkahwin\BusinessServices\Model\MANAGEUSERMODEL\ManageUser.php';
 
-// $id = $_SESSION['id'];
+session_start();
 
-// $query = "SELECT * FROM `user` WHERE id='$id'";
-// $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
-// $row = mysqli_fetch_array($result);
-// $count = mysqli_num_rows($result);
+if (isset($_COOKIE['user_data'])) {
+    $userArray = json_decode($_COOKIE['user_data'], true);
+    $id = $userArray['uid'];
+}
 
-
+// Fetch user data from the model
+$manageUser = new ManageUser();
+$user = $manageUser->getUserById($id);
 ?>
 
 <!DOCTYPE html>
@@ -41,15 +43,15 @@
                 </div>
                 <div class="contentBox mt-3">
                     <div class="desc">
-                        <form name="edit-profile-form" action="editprofileController.php" method="POST" onsubmit="return validateRegisterForm()" class="edit-profile-form-user">
+                        <form name="edit-profile-form" action="../../index.php" method="POST" onsubmit="return validateRegisterForm()" class="edit-profile-form-user">
                             <p>Nama:</p>
-                            <input type="text" id="icnum" name="icnum" required class="input-field2 mt-1" disabled value="<?php echo $row['icnum'] ?>" />
+                            <input type="text" id="icnum" name="icnum" required class="input-field2 mt-1" disabled value="<?php echo $user['icnum'] ?>" />
                             <br>
                             <p>Email:</p>
-                            <input type="email" id="email" name="email" required class="input-field2 mt-1" value="<?php echo $row['email'] ?>" />
+                            <input type="email" id="email" name="email" required class="input-field2 mt-1" value="<?php echo $user['email'] ?>" />
                             <br>
                             <p>Nama:</p>
-                            <input type="text" id="name" name="name" required class="input-field2 mt-1" value="<?php echo $row['name'] ?>" />
+                            <input type="text" id="name" name="name" required class="input-field2 mt-1" value="<?php echo $user['name'] ?>" />
                             <br>
                             <p>Jantina:</p>
                             <select name="gender" id="gender" class="input-field2 mt-1">
@@ -61,11 +63,11 @@
                             </select>
                             <br>
                             <p>No. Telefon:</p>
-                            <input type="text" id="phonenum" name="phonenum" placeholder="No. Telefon" required class="input-field2 mt-1" value="<?php echo $row['phonenum'] ?>" />
+                            <input type="text" id="phonenum" name="phonenum" placeholder="No. Telefon" required class="input-field2 mt-1" value="<?php echo $user['phonenum'] ?>" />
                             <br>
                             <p>Alamat:</p>
-                            <input type="text" id="address" name="address" required class="input-field2 mt-1" value="<?php echo $row['address'] ?>" />
-                            <input type="hidden" name="id" value="<?php echo $row['id'] ?>" />
+                            <input type="text" id="address" name="address" required class="input-field2 mt-1" value="<?php echo $user['address'] ?>" />
+                            <input type="hidden" name="id" value="<?php echo $user['uid'] ?>" />
                             <input type="submit" value="Kemaskini" class="button-user-profile mt-3" />
                         </form>
                     </div>

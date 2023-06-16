@@ -18,8 +18,12 @@ class loginuserController extends ManageUser
                 $userArray = array(
                     'uid' => $loginResult['id'],
                     'icnum' => $loginResult['icnum'],
-                    'fullname' => $loginResult['name'],
+                    'name' => $loginResult['name'],
                     'email' => $loginResult['email'],
+                    'gender' => $loginResult['gender'],
+                    'phonenum' => $loginResult['phonenum'],
+                    'address' => $loginResult['address'],
+                    'password' => $loginResult['password'],
                     'login' => true,
                 );
     

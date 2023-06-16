@@ -35,7 +35,10 @@
 
     <div class="container-fluid">
         <div class="row">
-            <?php include "../Component/sidebar.php"; ?>
+            <?php 
+            $activePage = 'profil';
+            include "../Component/sidebarStaff.php"; 
+            ?>
 
             <div class="col-md-9 content">
                 <div class="content-title bg-primary text-white p-3">

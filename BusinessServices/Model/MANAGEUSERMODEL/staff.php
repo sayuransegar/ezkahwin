@@ -19,6 +19,25 @@ class staff extends Connection {
         }
     }
     
+    public function getAllUsers()
+    {
+        $connection = $this->getConnection();
+    
+        $query = "SELECT * FROM user";
+    
+        $result = mysqli_query($connection, $query);
+    
+        $users = array();
+    
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $users[] = $row;
+            }
+        }
+    
+        return $users;
+    }
+    
 }
 
 ?>
