@@ -1,23 +1,22 @@
 <?php
-include('connect_db.php');
-session_start();
 
-if ($_POST['id'] == $_SESSION['id']) {
-    $id = $_POST['id'];
-    $email = $_POST['email'];
-    $name = $_POST['name'];
-    $gender = $_POST['gender'];
-    $phonenum = $_POST['phonenum'];
-    $address = $_POST['address'];
+require_once __DIR__ . '/../../Model/MANAGEUSERMODEL/ManageUser.php';
 
-    $query = "UPDATE user SET email='$email', name='$name', gender='$gender', phonenum='$phonenum', address='$address' WHERE id=$id";
 
-    if (mysqli_query($conn, $query)) {
-        echo "Record updated successfully";
-        header("refresh:3; url=home.php");
-      } else {
-        echo "Error updating record: " . mysqli_error($conn);
-        header("refresh:3; url=editprofile.php");
-      }
+class editprofileController extends ManageUser
+{
+  public function profile($email, $name, $gender, $phonenum, $address, $id)
+  {
+    $manageUser = new ManageUser();
+    $profileEditResult = $manageUser->editProfile($email, $name, $gender, $phonenum, $address, $id);
+
+    if (!$profileEditResult) {
+      echo "Failed Register"; // Debugging statement
+      header("refresh:3; ../../ezkahwin/App/ManageUser/editprofile.php");
+    } else {
+      echo "Profile Updated";
+      header("Location: ../../ezkahwin/App/ManageUser/editprofile.php");
+      exit();
+    }
+  }
 }
-?>

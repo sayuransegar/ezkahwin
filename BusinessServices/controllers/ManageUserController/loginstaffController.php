@@ -16,14 +16,16 @@ class loginstaffController extends staff
     
             if ($loginResult !== false ) {
                 $userArray = array(
-                    'uid' => $loginResult['id'],
+                    'sid' => $loginResult['id'],
                     'icnum' => $loginResult['icnum'],
-                    'fullname' => $loginResult['name'],
                     'email' => $loginResult['email'],
+                    'name' => $loginResult['name'],
+                    'gender' => $loginResult['gender'],
+                    'password' => $loginResult['password'],
                     'login' => true,
                 );
     
-                setcookie("user_data", json_encode($userArray));
+                setcookie("staff_data", json_encode($userArray));
     
                 header("Location: ../../ezkahwin/App/ManageUser/profilepengguna.php");
                 exit();
@@ -35,5 +37,7 @@ class loginstaffController extends staff
             include 'App/ManageUser/loginstaff.php';
         }
     }
+
+    
     
 }

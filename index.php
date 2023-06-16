@@ -5,7 +5,8 @@ require_once 'BusinessServices/controllers/MANAGEUSERCONTROLLER/loginstaffContro
 require_once 'BusinessServices/controllers/MANAGEUSERCONTROLLER/registerController.php';
 require_once 'BusinessServices/controllers/ManageConsultationController/complaintController.php';
 require_once 'BusinessServices/controllers/ManageConsultationController/consultationController.php';
-//require_once 'BusinessServices/controllers/MarriageRegistrationController/marriageRegistrationController.php';
+require_once 'BusinessServices/controllers/MANAGEUSERCONTROLLER/editprofileController.php';
+
 
 
 //$facade = new MarriageRegistrationController();
@@ -20,20 +21,11 @@ if (isset($_POST['Loginstaff'])) {
         include 'App/ManageUser/loginstaff.php';
         exit(); // Exit to prevent further execution
     }
-} else {
-    // User login request
-    if (isset($_POST['Loginuser'])) {
-        $facade = new loginuserController();
-        $facade->login();
+} elseif (isset($_POST['Loginuser'])) {
+    $facade = new loginuserController();
+    $facade->login();
 
-    } else {
-
-        // Display the user login view
-        include 'App/ManageUser/loginuser.php';
-    }
-}
-
-if (isset($_POST['daftar'])) {
+} elseif (isset($_POST['daftar'])) {
     $noIC = $_POST['icnum'];
     $email = $_POST['email'];
     $name = $_POST['name'];
@@ -44,6 +36,22 @@ if (isset($_POST['daftar'])) {
 
     $adduser = new registerController();
     $adduser->register($noIC, $email, $name, $gender, $phonenum, $address, $password);
+} else {
+
+    // Display the user login view
+    include 'App/ManageUser/loginuser.php';
+}
+
+if (isset($_POST['id']) && isset($_COOKIE['user_data'])) {
+    $id = $_POST['id'];
+    $email = $_POST['email'];
+    $name = $_POST['name'];
+    $gender = $_POST['gender'];
+    $phonenum = $_POST['phonenum'];
+    $address = $_POST['address'];
+
+    $editProfile = new EditProfileController();
+    $editProfile->profile($email, $name, $gender, $phonenum, $address, $id);
 }
 
 if (isset($_POST['submitcomplaint'])) {
@@ -65,13 +73,11 @@ if (isset($_POST['submitsession'])) {
 }
 
 if (isset($_POST['getComplaintData'])) {
-    $complaintController= new complaintController();
+    $complaintController = new complaintController();
     $complaintController->getDataComplaint();
 }
 
 if (isset($_POST['getConsultationtData'])) {
-    $consultationController= new consultationController();
+    $consultationController = new consultationController();
     $consultationController->getDataConsultation();
 }
-
-?>

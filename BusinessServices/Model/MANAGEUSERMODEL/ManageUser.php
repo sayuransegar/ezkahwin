@@ -30,4 +30,41 @@ class ManageUser extends Connection
             return $result;
         }
     }
+
+    public function editProfile($email, $name, $gender, $phonenum, $address, $id)
+    {
+        $connection = $this->getConnection();
+        $query = "UPDATE user SET email='$email', name='$name', gender='$gender', phonenum='$phonenum', address='$address' WHERE id=$id";
+        $result = mysqli_query($connection, $query);
+
+        if (!$result) {
+            return false;
+        }
+
+        // Update the user data in the cookie
+        if (isset($_COOKIE['user_data'])) {
+            $userArray = json_decode($_COOKIE['user_data'], true);
+            if ($userArray['uid'] == $id) {
+                $userArray['email'] = $email;
+                $userArray['name'] = $name;
+                $userArray['gender'] = $gender;
+                $userArray['phonenum'] = $phonenum;
+                $userArray['address'] = $address;
+                setcookie('user_data', json_encode($userArray)); // Update the cookie
+            }
+        }
+
+        return true;
+    }
+
+    public function getUserById($id)
+    {
+        if (isset($_COOKIE['user_data'])) {
+            $userArray = json_decode($_COOKIE['user_data'], true);
+            if ($userArray['uid'] == $id) {
+                return $userArray;
+            }
+        }
+        return null;
+    }
 }

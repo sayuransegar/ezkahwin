@@ -2,7 +2,7 @@
 if (isset($_COOKIE['user_data'])) {
     $userArray = json_decode($_COOKIE['user_data'], true);
     $icnum = $userArray['icnum'];
-    $name = $userArray['fullname'];
+    $name = $userArray['name'];
 }
 ?>
 

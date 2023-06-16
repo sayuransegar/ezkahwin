@@ -10,7 +10,7 @@
   <script src="script.js"></script>
 </head>
 
-<body class="page-bg">
+<body>
   <div>
     <header>
       <img src="https://i.imgur.com/D3gqdM6.jpg" alt="e-Munakahat Header Image" class="header-img" />

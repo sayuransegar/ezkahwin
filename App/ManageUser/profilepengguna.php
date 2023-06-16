@@ -1,13 +1,18 @@
 <?php
-//   include('connect_db.php');
-//   session_start();
+include('../../BusinessServices/Model/db.php');
+require_once 'C:\xampp\htdocs\ezkahwin\BusinessServices\controllers\MANAGEUSERCONTROLLER\profilepenggunaController.php';
+session_start();
 
-//   $id = $_SESSION['id'];
+if (isset($_COOKIE['staff_data'])) {
+    $userArray = json_decode($_COOKIE['staff_data'], true);
+    $id = $userArray['sid'];
+}
 
 //   $query = "SELECT * FROM `user`";
 //   $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 //   $count = mysqli_num_rows($result);
-
+$userData = new allUserData();
+$users = $userData->getUsersData();
 
 ?>
 
@@ -70,7 +75,10 @@
 
     <div class="container-fluid">
         <div class="row">
-            <?php include "../Component/sidebar.php"; ?>
+            <?php
+            $activePage = 'profil';
+            include "../Component/sidebarStaff.php";
+            ?>
 
             <div class="col-md-9 content">
                 <div class="content-title bg-primary text-white p-3">
@@ -104,52 +112,39 @@
                                 <tbody>
 
                                     <?php
-
-                                    if ($count > 0) {
-
+                                    if (!empty($users)) {
                                         $count = 1;
-                                        while ($row = mysqli_fetch_assoc($result)) {
-
+                                        foreach ($users as $user) {
                                             echo '<tr>
-                                        <td>
-                                           ' . $count . '
-                                        </td>
-                                        <td class="text-start">
-                                           <p>' . $row["icnum"] . '</p>
-                                           <p>' . $row["name"] . '</p>
-                                        </td>
-                                        <td class="text-start">
-                                           ' . $row["email"] . '
-                                        </td>
-                                        <td>
-                                           User
-                                        </td>
-                                        <td>
-                                           <div class="action">
-                                              <a class="item">
-                                                <img src="../../../ezkahwin/public/Images/view.png" />
-                                              </a>
-                                              <a class="item">
-                                                <img src="../../../ezkahwin/public/Images/print.png" />
-                                              </a>
-                                              <a class="item" href="deletepenggunaController.php?did=' . $row["id"] . '" onclick="return confirm(\'Are you sure to delete data?\');">
-                                                <img src="../../../ezkahwin/public/Images/delete.png"  />
-                                              </a>
-                                              <a class="item" href="editpengguna.php?eid=' . $row["id"] . '">
-                                                <img src="../../../ezkahwin/public/Images/edit.png" />
-                                              </a>
-                                              
-                                           </div>
-                                        </td>
-                                     </tr>';
-
+                                                    <td>' . $count . '</td>
+                                                    <td class="text-start">
+                                                        <p>' . $user["icnum"] . '</p>
+                                                        <p>' . $user["name"] . '</p>
+                                                    </td>
+                                                    <td class="text-start">' . $user["email"] . '</td>
+                                                    <td>User</td>
+                                                    <td>
+                                                        <div class="action">
+                                                            <a class="item">
+                                                                <img src="../../../ezkahwin/public/Images/view.png" />
+                                                            </a>
+                                                            <a class="item">
+                                                                <img src="../../../ezkahwin/public/Images/print.png" />
+                                                            </a>
+                                                            <a class="item" href="deletepenggunaController.php?did=' . $user["id"] . '" onclick="return confirm(\'Are you sure to delete data?\');">
+                                                                <img src="../../../ezkahwin/public/Images/delete.png"  />
+                                                            </a>
+                                                            <a class="item" href="editpengguna.php?eid=' . $user["id"] . '">
+                                                                <img src="../../../ezkahwin/public/Images/edit.png" />
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>';
                                             $count++;
                                         }
                                     } else {
-
-                                        echo "<tr><td colspan='10'>No Data</td></tr>";
+                                        echo "<tr><td colspan='5'>No Data</td></tr>";
                                     }
-
                                     ?>
 
 
