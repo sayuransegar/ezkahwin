@@ -1,6 +1,6 @@
 <?php
 if (isset($_COOKIE['staff_data'])) {
-    $userArray = json_decode($_COOKIE['user_data'], true);
+    $userArray = json_decode($_COOKIE['staff_data'], true);
     $icnum = $userArray['icnum'];
     $name = $userArray['name'];
 }
@@ -41,7 +41,7 @@ if (isset($_COOKIE['staff_data'])) {
                 <a class="nav-link" href="#">Insentif</a>
             </li>
             <li class="nav-item sidebar-item sidebar-item-last p-2">
-                <a class="nav-link" href="#">Log Keluar</a>
+                <a class="nav-link" href="../../../ezkahwin/App/ManageUser/logout.php">Log Keluar</a>
             </li>
         </ul>
     </div>

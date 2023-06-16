@@ -131,7 +131,7 @@ $users = $userData->getUsersData();
                                                             <a class="item">
                                                                 <img src="../../../ezkahwin/public/Images/print.png" />
                                                             </a>
-                                                            <a class="item" href="deletepenggunaController.php?did=' . $user["id"] . '" onclick="return confirm(\'Are you sure to delete data?\');">
+                                                            <a class="item" href="../../../ezkahwin/index.php?did=' . $user["id"] . '" onclick="return confirm(\'Are you sure to delete data?\');">
                                                                 <img src="../../../ezkahwin/public/Images/delete.png"  />
                                                             </a>
                                                             <a class="item" href="editpengguna.php?eid=' . $user["id"] . '">

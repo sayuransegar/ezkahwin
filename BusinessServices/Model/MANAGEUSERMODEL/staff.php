@@ -37,6 +37,38 @@ class staff extends Connection {
     
         return $users;
     }
+
+    public function getUserById($id)
+    {
+        $connection = $this->getConnection();
+        $query = "SELECT * FROM user WHERE id='$id'";
+        $result = mysqli_query($connection, $query);
+
+        $user = mysqli_fetch_assoc($result);
+
+        return $user;
+    }
+
+    public function deleteUserById($id)
+    {
+        $connection = $this->getConnection();
+        $query = "DELETE FROM user WHERE id='$id'";
+        mysqli_query($connection, $query);
+    }
+    
+
+    public function updateUser($email, $name, $gender, $phonenum, $address, $id)
+    {
+        $connection = $this->getConnection();
+        $query = "UPDATE user SET email='$email', name='$name', gender='$gender', phonenum='$phonenum', address='$address' WHERE id=$id";
+        $result = mysqli_query($connection, $query);
+
+        if (!$result) {
+            return false;
+        }
+
+        return true;
+    }
     
 }
 

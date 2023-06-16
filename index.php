@@ -6,6 +6,8 @@ require_once 'BusinessServices/controllers/MANAGEUSERCONTROLLER/registerControll
 require_once 'BusinessServices/controllers/ManageConsultationController/complaintController.php';
 require_once 'BusinessServices/controllers/ManageConsultationController/consultationController.php';
 require_once 'BusinessServices/controllers/MANAGEUSERCONTROLLER/editprofileController.php';
+require_once 'BusinessServices/controllers/MANAGEUSERCONTROLLER/editpenggunaController.php';
+require_once 'BusinessServices/controllers/MANAGEUSERCONTROLLER/deletepenggunaController.php';
 
 
 
@@ -53,6 +55,26 @@ if (isset($_POST['id']) && isset($_COOKIE['user_data'])) {
     $editProfile = new EditProfileController();
     $editProfile->profile($email, $name, $gender, $phonenum, $address, $id);
 }
+
+if (isset($_POST['id'])) {
+    $id = $_POST['id'];
+    $email = $_POST['email'];
+    $name = $_POST['name'];
+    $gender = $_POST['gender'];
+    $phonenum = $_POST['phonenum'];
+    $address = $_POST['address'];
+
+    $editProfile = new editPengguna();
+    $editProfile->userUpdate($email, $name, $gender, $phonenum, $address, $id);
+}
+
+if (isset($_GET['did'])) {
+    $id = $_GET['did'];
+
+    $deleteProfile = new deletePengguna();
+    $deleteProfile->deleteUser($id);
+}
+
 
 if (isset($_POST['submitcomplaint'])) {
     $complaint_date = $_POST['complaint_date'];
