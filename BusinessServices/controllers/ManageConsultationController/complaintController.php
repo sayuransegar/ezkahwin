@@ -67,4 +67,46 @@ class complaintController extends complaint
             header("refresh:3; ../../ezkahwin/App/ManageConsultation/complaintForm.php");
         }
     }
+    
+    // public function updateStatus($complaint_ID, $status_type)
+    // {
+    //     try {
+    //         $connection = $this->getConnection();
+    //         $status_type = mysqli_real_escape_string($connection, $status_type);
+    
+    //         $query = "UPDATE complaints SET status = '$status_type' WHERE complaint_ID = '$complaint_ID'";
+    //         $result = mysqli_query($connection, $query);
+    
+    //         if (!$result) {
+    //             throw new Exception("Error executing query: " . mysqli_error($connection));
+    //         }
+    
+    //         return true;
+    //     } catch (Exception $e) {
+    //         echo "Error: " . $e->getMessage();
+    //         return false;
+    //     }
+    // }
+
+    public function updateStatus($consultationID, $status) {
+        try {
+            $connection = $this->getConnection();
+            $query = "UPDATE consultation SET status = ? WHERE consultation_ID = ?";
+            $stmt = $connection->prepare($query);
+            $stmt->bind_param("si", $status, $consultationID);
+
+            if (!$stmt->execute()) {
+                throw new Exception("Error executing query: " . $stmt->error);
+            }
+
+            $stmt->close();
+            $connection->close();
+
+            echo "Status updated successfully.";
+        } catch (Exception $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
+
+    
 }

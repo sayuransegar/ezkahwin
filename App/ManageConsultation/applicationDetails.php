@@ -14,9 +14,13 @@
     <!-- Call the data -->
     <?php
     require_once 'C:\xamppnew\htdocs\ezkahwin\BusinessServices\controllers\ManageConsultationController\complaintController.php';
+    require_once 'C:\xamppnew\htdocs\ezkahwin\BusinessServices\controllers\ManageConsultationController\consultationController.php';
 
     $complaintController = new complaintController();
     $complaintData = $complaintController->getDataComplaint();
+    $consultationController = new consultationController();
+    $consultationData = $consultationController->getDataConsultation();
+
     ?>
     <?php include "../Component/header.php"; ?>
 
@@ -49,7 +53,7 @@
 
                             <!-- Display all the application -->
                             <?php
-                            if (!empty($complaintData)) {
+                            if (!empty($complaintData && $consultationData)) {
                                 echo "<table style='border: 1px solid black; border-collapse: collapse; width: 100%; background-color: white;'>";
                                 echo "<tr>";
                                 echo "<th style='border: 1px solid black; padding: 5px; text-align: center;'>IC/Nama Pemohon</th>";
@@ -63,20 +67,26 @@
                                     $complaint_ID = $complaint['complaint_ID'];
                                     $complaint_date = $complaint['complaint_date'];
 
-                                    echo "<tr>";
-                                    echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'></td>";
-                                    echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>$complaint_date</td>";
-                                    echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'></td>";
-                                    echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'></td>";
-                                    echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>";
-                                    echo "<a href='complaintForm.php?id=$complaint_ID' style='text-decoration: none;'><i class='fas fa-eye'></i></a>&nbsp;";
-                                    echo "<a href='javascript:void(0);' onclick='printComplaint($complaint_ID)' style='text-decoration: none;'><i class='fas fa-print'></i></a>&nbsp;";
-                                    echo "<a href='applicationDetails.php?id=$complaint_ID' style='text-decoration: none;' onclick='return confirm(\"Are you sure you want to delete this complaint?\");'><i class='fas fa-trash'></i></a>&nbsp;";
-                                    echo "<a href='complaintForm.php?id=$complaint_ID' style='text-decoration: none;'><i class='fas fa-edit'></i></a>";
-                                    echo "</td>";
-                                    echo "</tr>";
-                                }
+                                    foreach ($consultationData as $consultation) {
+                                        if ($consultation['consultation_ID'] === $complaint_ID) {
+                                            $consultation_ID = $consultation['consultation_ID'];
+                                            $consultation_date = $consultation['consultation_date'];
 
+                                            echo "<tr>";
+                                            echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'></td>";
+                                            echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>$complaint_date</td>";
+                                            echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>$consultation_date</td>";
+                                            echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>DALAM PROSESS</td>";
+                                            echo "<td style='border: 1px solid black; padding: 5px; text-align: center;'>";
+                                            echo "<a href='complaintForm.php?id=$complaint_ID' style='text-decoration: none;'><i class='fas fa-eye'></i></a>&nbsp;";
+                                            echo "<a href='javascript:void(0);' onclick='printComplaint($complaint_ID)' style='text-decoration: none;'><i class='fas fa-print'></i></a>&nbsp;";
+                                            echo "<a href='applicationDetails.php?id=$complaint_ID' style='text-decoration: none;' onclick='return confirm(\"Are you sure you want to delete this complaint?\");'><i class='fas fa-trash'></i></a>&nbsp;";
+                                            echo "<a href='complaintForm.php?id=$complaint_ID' style='text-decoration: none;'><i class='fas fa-edit'></i></a>";
+                                            echo "</td>";
+                                            echo "</tr>";
+                                        }
+                                    }
+                                }
                                 echo "</table>";
                                 echo "<br><br>";
                             } else {
