@@ -1,6 +1,6 @@
 <?php
 // controller.php
-require_once 'IncentiveProfile.php';
+require_once 'C:\xampp\htdocs\ezkahwin\BusinessServices\Model\IncentiveModel\IncentiveProfile.php';
 
 class ProfileController {
     private $incentiveProfile;

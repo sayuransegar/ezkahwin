@@ -13,8 +13,8 @@
 <body>
     <!-- Call the data -->
     <?php
-    require_once 'C:\xamppnew\htdocs\ezkahwin\BusinessServices\controllers\ManageConsultationController\consultationController.php';
-    require_once 'C:\xamppnew\htdocs\ezkahwin\BusinessServices\controllers\ManageConsultationController\complaintController.php';
+    require_once 'C:\xampp\htdocs\ezkahwin\BusinessServices\controllers\ManageConsultationController\consultationController.php';
+    require_once 'C:\xampp\htdocs\ezkahwin\BusinessServices\controllers\ManageConsultationController\complaintController.php';
 
     $complaintController = new complaintController();
     $complaintData = $complaintController->getDataComplaint();
@@ -36,7 +36,10 @@
 
     <div class="container-fluid">
         <div class="row">
-            <?php include "../Component/sidebar.php"; ?>
+            <?php
+            $activePage = 'aduan';
+            include "../Component/sidebarStaff.php";
+            ?>
 
             <div class="col-md-9 content">
                 <div class="content-title bg-success text-white p-3">
