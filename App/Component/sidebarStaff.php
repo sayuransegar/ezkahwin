@@ -38,7 +38,7 @@ if (isset($_COOKIE['staff_data'])) {
                 <a class="nav-link" href="../../../ezkahwin/App/ManageConsultation/listOfApplication.php">Aduan/Khidmat Nasihat</a>
             </li>
             <li class="nav-item sidebar-item p-2 <?php echo $activePage === 'insentif' ? 'active' : ''; ?>">
-                <a class="nav-link" href="#">Insentif</a>
+                <a class="nav-link" href="../../../ezkahwin/App/ManageIncentive/ApplicantsListForm.php">Insentif</a>
             </li>
             <li class="nav-item sidebar-item sidebar-item-last p-2">
                 <a class="nav-link" href="../../../ezkahwin/App/ManageUser/logout.php">Log Keluar</a>

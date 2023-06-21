@@ -237,11 +237,11 @@ session_start();
 		<div class="row">
 			<?php
             $activePage = 'insentif';
-            include "../Component/sidebar.php"; 
+            include "../Component/sidebarStaff.php"; 
             ?>
 
 			<div class="col-md-9 content">
-				<div class="content-title bg-primary text-white p-3">
+				<div class="content-title bg-success text-white p-3">
 					<h1 class="h3 m-0">Insentif</h1>
 				</div>
 				<div class="contentBox mt-3">
@@ -294,7 +294,6 @@ session_start();
 								</div>
 								<div class="btnGroup">
 
-									<a class="btn" href="ApplicationRuleForm.php">HOME</a>
 									<a class="btn" href="ApplicationStatusForm.php">CARI</a>
 								</div>
 						</main>
