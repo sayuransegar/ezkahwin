@@ -287,7 +287,6 @@ session_start();
 
 								<div class="btnGroup">
 
-									<a class="btn" href="ApplicantsListForm.php">STATUS PERMOHONAN</a>
 									<a class="btn" href="NewApplicationForm.php">MEMOHAN</a>
 
 

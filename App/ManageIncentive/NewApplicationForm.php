@@ -352,10 +352,10 @@ session_start();
                                 <div class="btnGroup">
 
                                     <a class="btn" href="ApplicationRuleForm.php">HOME</a>
-                                    <a class="btn" input type="submit">SIMPAN</a>
+                                    <input class="btn" type="submit" value="SIMPAN" />
 
                                 </div>
-                                <input type="submit" value="Simpan">
+                               
                             </form>
 
                         </main>
