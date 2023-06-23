@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 17, 2023 at 12:09 AM
+-- Generation Time: Jun 23, 2023 at 03:08 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -74,7 +74,8 @@ INSERT INTO `complaint` (`complaint_id`, `complaint_date`, `complaint_desc`) VAL
 (8, '2023-06-16', '1234'),
 (9, '2023-06-16', 'qwertyu'),
 (10, '2023-06-16', 'wsfgyy'),
-(11, '2023-06-24', '');
+(11, '2023-06-24', ''),
+(12, '2023-06-17', '12345');
 
 -- --------------------------------------------------------
 
@@ -101,7 +102,8 @@ INSERT INTO `consultation` (`consultation_ID`, `consultation_session_no`, `consu
 (4, 1, 'Ya', '2023-06-16', '10:41:00'),
 (5, 1, 'Ya', '2023-06-16', '10:41:00'),
 (6, 1, 'Ya', '2023-06-08', '17:59:00'),
-(7, 7, 'Tidak', '2023-06-30', '18:00:00');
+(7, 7, 'Tidak', '2023-06-30', '18:00:00'),
+(8, 1, 'Tidak', '2023-06-17', '10:40:00');
 
 -- --------------------------------------------------------
 
@@ -124,7 +126,8 @@ CREATE TABLE `marriagecard` (
 
 INSERT INTO `marriagecard` (`card_id`, `marriageregister_id`, `admin_id`, `proofofpayment`, `card_produce_date`, `status`) VALUES
 (12, 1, NULL, '', NULL, ''),
-(13, NULL, NULL, '', NULL, NULL);
+(13, NULL, NULL, '', NULL, NULL),
+(14, NULL, NULL, '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -151,7 +154,8 @@ INSERT INTO `marriageregistration` (`marriageregister_id`, `requestmarriage_id`,
 (5, NULL, NULL, 'Perkahwinan dengan kebenaran', '3456789', ''),
 (6, NULL, NULL, 'Perkahwinan dengan kebenaran', '3456789', ''),
 (7, NULL, NULL, 'Perkahwinan dengan kebenaran', '2345SDF34', NULL),
-(8, NULL, NULL, 'Select an option', '', NULL);
+(8, NULL, NULL, 'Select an option', '', NULL),
+(9, NULL, NULL, 'Perkahwinan dengan kebenaran', '2345SDF34', NULL);
 
 -- --------------------------------------------------------
 
@@ -269,7 +273,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `icnum`, `email`, `name`, `gender`, `phonenum`, `address`, `password`) VALUES
 (1, '010521081643', 'aimnsbri@gmail.com', 'Muhammad Aiman Bin Mohd Sabri', '', '01151453238', '016, MATANG TENGAH', '12345'),
-(19, '020512030106', 'tengkufarisha10@gmail.com', 'Tengku Farisha ', 'perempuan', '01923029102', 'Orang rumah awak', '12345');
+(20, '000330060746', 'atulfaa@gmail.com', 'Anis Zulaikha', 'lelaki', '0192818313', 'k221 taman inderapura', '12345');
 
 --
 -- Indexes for dumped tables
@@ -354,25 +358,25 @@ ALTER TABLE `applicant`
 -- AUTO_INCREMENT for table `complaint`
 --
 ALTER TABLE `complaint`
-  MODIFY `complaint_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `complaint_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `consultation`
 --
 ALTER TABLE `consultation`
-  MODIFY `consultation_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `consultation_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `marriagecard`
 --
 ALTER TABLE `marriagecard`
-  MODIFY `card_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `card_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `marriageregistration`
 --
 ALTER TABLE `marriageregistration`
-  MODIFY `marriageregister_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `marriageregister_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `partner`
@@ -402,7 +406,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables
