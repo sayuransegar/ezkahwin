@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2023 at 03:08 AM
+-- Generation Time: Jun 24, 2023 at 04:56 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -185,6 +185,34 @@ INSERT INTO `partner` (`partner_id`, `partner_ic`, `partner_name`, `partner_phon
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pemohon`
+--
+
+CREATE TABLE `pemohon` (
+  `id` int(11) NOT NULL,
+  `ic_num` varchar(20) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `birth_date` date DEFAULT NULL,
+  `birth_place` varchar(100) DEFAULT NULL,
+  `address` text DEFAULT NULL,
+  `phone_number` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `pemohon`
+--
+
+INSERT INTO `pemohon` (`id`, `ic_num`, `name`, `birth_date`, `birth_place`, `address`, `phone_number`) VALUES
+(1, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, '010521081643', 'MUHAMMAD AIMAN BIN MOHD SABRI', '2023-06-17', 'Hajuixs', 'ijhkcjabksjc', '12345678'),
+(3, '', '', '1993-02-01', '', '', ''),
+(4, '930201-06-0313', 'Muhammad Azam bin Mahmood', '1993-02-01', 'Hospital Sultan Haji Ahmad Shah, Temerloh', 'No 3 Jalan Belakang Stesen KTM 28010 Termeloh Pahang', '013-9868652'),
+(5, '990319-05-5827', 'Aiman', '1999-03-19', 'Hospital Sultan Haji Ahmad Shah, Temerloh', 'No 3 Jalan Belakang Stesen KTM 28010 Termeloh Pahang', '013-9868652'),
+(6, '132345235', 'aiman', '2023-06-24', 'aassfdf', 'zzzxx', '00192834');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `requestmarriage`
 --
 
@@ -319,6 +347,12 @@ ALTER TABLE `partner`
   ADD PRIMARY KEY (`partner_id`);
 
 --
+-- Indexes for table `pemohon`
+--
+ALTER TABLE `pemohon`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `requestmarriage`
 --
 ALTER TABLE `requestmarriage`
@@ -383,6 +417,12 @@ ALTER TABLE `marriageregistration`
 --
 ALTER TABLE `partner`
   MODIFY `partner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2147483648;
+
+--
+-- AUTO_INCREMENT for table `pemohon`
+--
+ALTER TABLE `pemohon`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `requestmarriage`
