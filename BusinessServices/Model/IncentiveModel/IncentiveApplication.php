@@ -5,7 +5,7 @@ class Model {
 
     public function __construct() {
         // Replace 'hostname', 'username', 'password', and 'database' with your actual database credentials
-        $this->db = new mysqli('localhost', 'root', '', 'pemohon_db');
+        $this->db = new mysqli('localhost', 'root', '', 'emunakahat');
 
         if ($this->db->connect_error) {
             die('Connection failed: ' . $this->db->connect_error);
